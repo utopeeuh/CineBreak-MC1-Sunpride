@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UITextView!
     @IBOutlet weak var startStopButton: UIButton!
     
+    var sessionTime: CVarArg?
     var timerCounting:Bool = false
     var startTime:Date?
     var stopTime:Date?
@@ -96,6 +97,8 @@ class ViewController: UIViewController {
         if scheduledTimer != nil
         {
             scheduledTimer.invalidate()
+            sessionTime = Date().timeIntervalSince(startTime!)
+            print(String(format: "%.0f seconds", sessionTime!))
         }
         
         setTimerCounting(false)
@@ -106,6 +109,8 @@ class ViewController: UIViewController {
         
         timerLabel.text = makeTimeString(min: 30, sec: 0)
         AppNotification.stopNotification()
+        
+        
     }
     
     @objc func refreshValue()
