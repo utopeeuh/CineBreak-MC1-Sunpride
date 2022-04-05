@@ -56,4 +56,8 @@ class AppNotification
             }
         }
     }
+    
+    public static func stopNotification(){
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
 }

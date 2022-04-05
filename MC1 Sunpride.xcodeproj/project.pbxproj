@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951EFD2027FBFDC200AFEFCF /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
 		95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB227FAA8F9000B4A4C /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */,
 				95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */,
 				95E48AB227FAA8F9000B4A4C /* ViewController.swift */,
+				951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */,
 				95E48AB427FAA8F9000B4A4C /* Main.storyboard */,
 				95E48AB727FAA8F9000B4A4C /* Assets.xcassets */,
 				95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951EFD2027FBFDC200AFEFCF /* AppNotification.swift in Sources */,
 				95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */,
 				A1F404C327FD61DD00593FA7 /* ResetTableViewCell.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
