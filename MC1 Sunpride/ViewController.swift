@@ -108,9 +108,7 @@ class ViewController: UIViewController {
         startStopButton.setTitle("Start", for: .normal)
         
         timerLabel.text = makeTimeString(min: 30, sec: 0)
-        AppNotification.stopNotification()
-        
-        
+        AppNotification.resetBreakNotification()
     }
     
     @objc func refreshValue()

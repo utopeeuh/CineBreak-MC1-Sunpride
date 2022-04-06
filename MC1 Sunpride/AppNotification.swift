@@ -89,7 +89,7 @@ class AppNotification
         }
     }
     
-    private static func resetBreakNotification() -> Void
+    static func resetBreakNotification() -> Void
     {
         for step in BreakNotificationStep.allCases
         {
