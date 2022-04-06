@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UITextView!
     @IBOutlet weak var startStopButton: UIButton!
     
+    var sessions = getSessions()
+    
     var sessionTime: CVarArg?
     var timerCounting:Bool = false
     var startTime:Date?
