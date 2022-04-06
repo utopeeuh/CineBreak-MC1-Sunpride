@@ -43,6 +43,7 @@ extension UIColor {
     static let backgroundColor: UIColor = UIColor(named: "backgroundColor")!
     static let blackColor: UIColor = UIColor(named: "blackColor")!
     static let whiteColor: UIColor = UIColor(named: "whiteColor")!
+    static let orangeColor: UIColor = UIColor(named: "orangeColor")!
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -77,6 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
   
         func configure(){
+                
             models.append(Section(title: "General1", options: [
             
                 .staticCell(model: SettingsOption(title: "Message Intensity", icon: UIImage(systemName: "message"), iconBackgroundColor: .iconColor){
