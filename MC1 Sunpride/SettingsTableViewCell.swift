@@ -1,6 +1,6 @@
 //
 //  SettingsTableViewCell.swift
-//  MC1 Sunpride
+//  MC1-Sunpride
 //
 //  Created by Nikita Felicia on 05/04/22.
 //
