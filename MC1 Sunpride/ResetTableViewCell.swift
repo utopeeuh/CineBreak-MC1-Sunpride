@@ -21,6 +21,7 @@ class ResetTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.clipsToBounds = true
         accessoryType = .none
+        backgroundColor = UIColor.blackColor
     }
     
     required init?(coder: NSCoder){

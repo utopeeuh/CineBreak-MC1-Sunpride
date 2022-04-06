@@ -11,8 +11,10 @@ import UIKit
 class SettingsTableViewCell: UITableViewCell {
     static let identifier = "SettingTableViewCell"
    
+    
     private let iconContainer: UIView = {
         let view = UIView()
+        //let disView = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
@@ -31,14 +33,17 @@ class SettingsTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         return label
     }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         contentView.addSubview(iconContainer)
         contentView.addSubview(iconImageView)
-        
         contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        accessoryView?.tintColor = UIColor.whiteColor
+        backgroundColor = UIColor.blackColor
+
     }
     
     required init?(coder: NSCoder){
@@ -47,6 +52,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+
         let size: CGFloat = contentView.frame.size.height - 12
         iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
 
@@ -58,6 +64,8 @@ class SettingsTableViewCell: UITableViewCell {
                              y: 0,
                              width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
                              height: contentView.frame.size.height
+                             
+
         )
         
     }
@@ -67,10 +75,13 @@ class SettingsTableViewCell: UITableViewCell {
         iconImageView.image = nil
         label.text = nil
         iconContainer.backgroundColor = nil
+        
     }
     
     public func configure(with model: SettingsOption){
+
         label.text = model.title
+        label.textColor = UIColor.whiteColor
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
     }

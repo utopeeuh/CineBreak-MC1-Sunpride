@@ -46,7 +46,9 @@ class SwitchTableViewCell: UITableViewCell {
         contentView.addSubview(mySwitch)
         contentView.addSubview(iconImageView)
         
+        backgroundColor = UIColor.blackColor
         contentView.clipsToBounds = true
+        
         //buat > di settings
         accessoryType = .none
     }
@@ -93,8 +95,10 @@ class SwitchTableViewCell: UITableViewCell {
     
     public func configure(with model: SettingsSwitchOption){
         label.text = model.title
+        label.textColor = UIColor.whiteColor
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
         mySwitch.isOn = model.isOn
     }
 }
+

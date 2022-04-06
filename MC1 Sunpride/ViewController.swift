@@ -20,7 +20,6 @@ enum SettingsOptionType {
 
 struct SettingsSwitchOption {
     let title: String
-    //let titleFontColor: UIColor
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     let handler: (() ->Void)
@@ -40,8 +39,10 @@ struct ResetOption{
 }
 
 extension UIColor {
-    static let AccentColor: UIColor = UIColor(named: "AccentColor")!
-    static let BackgroundColor: UIColor = UIColor(named: "BackgroundColor")!
+    static let iconColor: UIColor = UIColor(named: "iconColor")!
+    static let backgroundColor: UIColor = UIColor(named: "backgroundColor")!
+    static let blackColor: UIColor = UIColor(named: "blackColor")!
+    static let whiteColor: UIColor = UIColor(named: "whiteColor")!
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -49,10 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
-        //let tableBackgroundColor: UIColor.AccentColor
-        //let textColor: UIColor.AccentColor
-        let tableViewColor: UIColor
-        
+    
         table.register(SettingsTableViewCell.self,
                        forCellReuseIdentifier: SettingsTableViewCell.identifier)
         table.register(SwitchTableViewCell.self,
@@ -69,40 +67,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         configure()
         
-        title = "Settings"
+            title = "Settings"
             view.addSubview(tableView)
             tableView.delegate = self
             tableView.dataSource = self
             tableView.frame = view.bounds
-            tableView.backgroundColor = UIColor.BackgroundColor
-            //tableViewColor.textLabel?.textColor = UIColor.BackgroundColor
+            tableView.backgroundColor = UIColor.backgroundColor
         
-        
-            
     }
   
         func configure(){
             models.append(Section(title: "General1", options: [
-                
-                .staticCell(model: SettingsOption(title: "Message Intensity", icon: UIImage(systemName: "message"), iconBackgroundColor: .AccentColor){
-                       
+            
+                .staticCell(model: SettingsOption(title: "Message Intensity", icon: UIImage(systemName: "message"), iconBackgroundColor: .iconColor){
+            
                         
                 }),
-                .switchCell(model: SettingsSwitchOption(title: "Vibrate", icon: UIImage(systemName: "speaker.wave.3"), iconBackgroundColor: . systemIndigo, handler: {
+                .switchCell(model: SettingsSwitchOption(title: "Vibrate", icon: UIImage(systemName: "speaker.wave.3"), iconBackgroundColor: .iconColor, handler: {
                     
                 }, isOn: true))
             
             ]))
             
             models.append(Section(title: "General2", options: [
-                .staticCell(model: SettingsOption(title: "Notifications", icon: UIImage(systemName: "bell"), iconBackgroundColor: .systemIndigo){
+                .staticCell(model: SettingsOption(title: "Notifications", icon: UIImage(systemName: "bell"), iconBackgroundColor: .iconColor){
                    
                     
                 }),
-                .staticCell(model: SettingsOption(title: "User Preference", icon: UIImage(systemName: "gearshape.2"), iconBackgroundColor: .systemIndigo){
+                .staticCell(model: SettingsOption(title: "User Preferences", icon: UIImage(systemName: "gearshape.2"), iconBackgroundColor: .iconColor){
                     
                 }),
-                .staticCell(model:SettingsOption(title: "Tutorial", icon: UIImage(systemName: "book"), iconBackgroundColor: .systemIndigo){
+                .staticCell(model:SettingsOption(title: "Tutorial", icon: UIImage(systemName: "book"), iconBackgroundColor: .iconColor){
                     
                 })
             ]))
@@ -126,6 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
         return models[section].options.count
     }
     
@@ -137,6 +133,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: SettingsTableViewCell.identifier,
                 for: indexPath
+    
             ) as? SettingsTableViewCell else {
                 return UITableViewCell()
             }
@@ -144,6 +141,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         case .switchCell(let model):
+    
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: SwitchTableViewCell.identifier,
                 for: indexPath
@@ -157,6 +155,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ResetTableViewCell.identifier,
                 for: indexPath
+                
             ) as? ResetTableViewCell else {
                 return UITableViewCell()
             }
@@ -167,6 +166,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+           
         let type = models[indexPath.section].options[indexPath.row]
     
         switch type.self{
@@ -181,5 +181,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 }
-
-
