@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MC1 Sunpride
+//  MC1 Sunpride 4
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 04/04/22.
+//  Created by Nikita Felicia on 06/04/22.
 //
 
 import UIKit
