@@ -46,7 +46,7 @@ class SwitchTableViewCell: UITableViewCell {
         contentView.addSubview(mySwitch)
         contentView.addSubview(iconImageView)
         
-        backgroundColor = UIColor.blackColor
+        backgroundColor = UIColor.greyColor
         contentView.clipsToBounds = true
         
         //buat > di settings

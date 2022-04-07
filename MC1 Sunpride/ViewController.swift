@@ -44,6 +44,7 @@ extension UIColor {
     static let blackColor: UIColor = UIColor(named: "blackColor")!
     static let whiteColor: UIColor = UIColor(named: "whiteColor")!
     static let orangeColor: UIColor = UIColor(named: "orangeColor")!
+    static let greyColor: UIColor = UIColor(named: "greyColor")!
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -74,6 +75,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.dataSource = self
             tableView.frame = view.bounds
             tableView.backgroundColor = UIColor.backgroundColor
+        //    tableView.setSeparatorColor:[UIColor myColor]]
+        tableView.separatorColor = UIColor.whiteColor
+        
+        //tableView.separatorInset = UIEdgeInsetsMake(0, 3, 0, 11);
         
     }
   

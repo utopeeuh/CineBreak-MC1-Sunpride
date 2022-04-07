@@ -42,7 +42,12 @@ class SettingsTableViewCell: UITableViewCell {
         contentView.clipsToBounds = true
         accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
         accessoryView?.tintColor = UIColor.whiteColor
-        backgroundColor = UIColor.blackColor
+        backgroundColor = UIColor.greyColor
+        
+    //iconImageView.separatorColor = UIColor.white
+       //contentView.separatorColor = UIColor.whiteColor
+        //Value of type 'UIView' has no member 'separatorColor'
+        
 
     }
     
@@ -55,20 +60,48 @@ class SettingsTableViewCell: UITableViewCell {
 
         let size: CGFloat = contentView.frame.size.height - 12
         iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
-
-        let imageSize = size/1.5
+    
+//        let size: CGFloat = contentView.frame.size.height - 12
+//        iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
+        
+        let imageSize = size/1.8
         iconImageView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
         iconImageView.center = iconContainer.center
+        
+//        let imageSize = size/1.5
+//        iconImageView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
+//        iconImageView.center = iconContainer.center
         
         label.frame = CGRect(x: 25 + iconContainer.frame.size.width,
                              y: 0,
                              width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
                              height: contentView.frame.size.height
-                             
+        
+      
 
         )
         
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        let size: CGFloat = contentView.frame.size.height - 12
+//        iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
+//
+//        let imageSize = size/1.5
+//        iconImageView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
+//        iconImageView.center = iconContainer.center
+//
+//        label.frame = CGRect(x: 25 + iconContainer.frame.size.width,
+//                             y: 0,
+//                             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
+//                             height: contentView.frame.size.height
+//
+//
+//        )
+//
+//   }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -82,7 +115,10 @@ class SettingsTableViewCell: UITableViewCell {
 
         label.text = model.title
         label.textColor = UIColor.whiteColor
+        //label.separatorColor = UIColor.systemBlue
         iconImageView.image = model.icon
+    //iconImageView.separatorColor = model.iconBackgroundColor
+        //iconContainer.separatorColor = model.iconBackgroundColor
         iconContainer.backgroundColor = model.iconBackgroundColor
     }
 }
