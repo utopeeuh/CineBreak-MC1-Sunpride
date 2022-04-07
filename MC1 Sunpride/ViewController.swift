@@ -11,11 +11,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UITextView!
     @IBOutlet weak var startStopButton: UIButton!
-    
-    var sessions = getSessions()
+
     let userDefaults = UserDefaults.standard
     
     var sessionTimer: SessionTimer?
+    var sessions = getSessions()
 
     override func viewDidLoad()
     {
@@ -23,11 +23,16 @@ class ViewController: UIViewController {
         
         AppNotification.requestAuthorization()
         sessionTimer = SessionTimer(timerLabel: timerLabel, startStopButton: startStopButton)
-        
     }
     
     @IBAction func startStopAction(_ sender: Any) {
         sessionTimer!.startStopAction()
+    }
+    
+    func updateSessions(){
+        if let data = try? PropertyListEncoder().encode(sessions) {
+                UserDefaults.standard.set(data, forKey: SESSIONS_KEY)
+        }
     }
 }
 
