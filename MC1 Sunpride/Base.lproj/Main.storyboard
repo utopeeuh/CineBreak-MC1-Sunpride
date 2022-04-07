@@ -15,8 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ev7-6d-LvT">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XJ7-As-xEQ"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Home" image="house" selectedImage="house.fill" id="jpe-Xr-y83"/>
+                                    <tabBarItem title="Statistics" image="chart.bar" selectedImage="chart.bar.fill" id="BlI-gW-qfu"/>
+                                    <tabBarItem title="Settings" image="gearshape" selectedImage="gearshape.fill" id="wgb-mc-8UX"/>
+                                </items>
+                                <color key="selectedImageTintColor" red="0.95686274770000002" green="0.78431367870000002" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <tabBarAppearance key="standardAppearance">
+                                    <color key="backgroundColor" red="0.086274504660000001" green="0.094117648900000003" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </tabBarAppearance>
+                            </tabBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1an-mq-7V5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="36"/>
+                                <connections>
+                                    <segue destination="bw3-ga-k1y" kind="embed" id="nWq-NS-SOG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14901961389999999" green="0.1647058874" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="1an-mq-7V5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="EZF-YO-EZe"/>
+                            <constraint firstItem="ev7-6d-LvT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PDv-mW-oP1"/>
+                            <constraint firstItem="1an-mq-7V5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="UaK-DU-gEP"/>
+                            <constraint firstItem="ev7-6d-LvT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aRg-rp-hyO"/>
+                            <constraint firstItem="ev7-6d-LvT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="opl-hT-JiW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x5I-Ul-DBG"/>
                 </viewController>
