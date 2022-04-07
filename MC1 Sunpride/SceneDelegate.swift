@@ -3,7 +3,6 @@
 //  MC1 Sunpride 3
 //
 //  Created by Nikita Felicia on 06/04/22.
-//
 
 import UIKit
 
