@@ -40,7 +40,7 @@ struct ResetOption{
 
 extension UIColor {
     static let iconColor: UIColor = UIColor(named: "iconColor")!
-    static let backgroundColor: UIColor = UIColor(named: "backgroundColor")!
+    static let backgroundColor: UIColor = UIColor(named: "BackgroundColor")!
     static let blackColor: UIColor = UIColor(named: "blackColor")!
     static let whiteColor: UIColor = UIColor(named: "whiteColor")!
     static let orangeColor: UIColor = UIColor(named: "orangeColor")!
