@@ -36,6 +36,10 @@
                                     <segue destination="bw3-ga-k1y" kind="embed" id="nWq-NS-SOG"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKg-JL-PHL" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
+                                <rect key="frame" x="57" y="150" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14901961389999999" green="0.1647058874" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
