@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  MC1 Sunpride
+//  MC1 Splash screen
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 04/04/22.
+//  Created by Nikita Felicia on 07/04/22.
 //
 
 import UIKit
