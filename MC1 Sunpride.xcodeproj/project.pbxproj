@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F70207827FE434C00B42640 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207727FE434C00B42640 /* HomeViewController.swift */; };
+		3F70207A27FE435D00B42640 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207927FE435D00B42640 /* StatisticsViewController.swift */; };
+		3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207B27FE436E00B42640 /* SettingsViewController.swift */; };
+		3F70208427FE4F0900B42640 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70208327FE4F0900B42640 /* Theme.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
 		95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB227FAA8F9000B4A4C /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F70207727FE434C00B42640 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F70207927FE435D00B42640 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		3F70207B27FE436E00B42640 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3F70208327FE4F0900B42640 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		95E48AAD27FAA8F9000B4A4C /* MC1 Sunpride */ = {
 			isa = PBXGroup;
 			children = (
+				3F70208327FE4F0900B42640 /* Theme.swift */,
+				3F70207727FE434C00B42640 /* HomeViewController.swift */,
 				95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */,
 				95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */,
 				95E48AB227FAA8F9000B4A4C /* ViewController.swift */,
@@ -63,6 +73,8 @@
 				95E48AB727FAA8F9000B4A4C /* Assets.xcassets */,
 				95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */,
 				95E48ABC27FAA8F9000B4A4C /* Info.plist */,
+				3F70207927FE435D00B42640 /* StatisticsViewController.swift */,
+				3F70207B27FE436E00B42640 /* SettingsViewController.swift */,
 			);
 			path = "MC1 Sunpride";
 			sourceTree = "<group>";
@@ -141,6 +153,10 @@
 				95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
+				3F70207A27FE435D00B42640 /* StatisticsViewController.swift in Sources */,
+				3F70207827FE434C00B42640 /* HomeViewController.swift in Sources */,
+				3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */,
+				3F70208427FE4F0900B42640 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +306,11 @@
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,9 +336,11 @@
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
