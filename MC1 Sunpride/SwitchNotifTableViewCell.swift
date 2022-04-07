@@ -27,7 +27,7 @@ class SwitchNotifTableViewCell: UITableViewCell {
     private let mySwitch: UISwitch = {
         let mySwitch = UISwitch()
        
-        mySwitch.onTintColor = .orangeColor
+        mySwitch.onTintColor = UIColor.orangeColor
         return mySwitch
     }()
     
@@ -37,7 +37,7 @@ class SwitchNotifTableViewCell: UITableViewCell {
         contentView.addSubview(mySwitch)
         contentView.clipsToBounds = true
         
-        backgroundColor = UIColor.blackColor
+        backgroundColor = UIColor.greyColor
         
         //buat > di settings
         accessoryType = .none
