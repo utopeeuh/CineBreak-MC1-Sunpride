@@ -14,10 +14,13 @@
 		3F70208627FE9C2A00B42640 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F70208527FE9C2A00B42640 /* TimerView.xib */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
-		95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB227FAA8F9000B4A4C /* ViewController.swift */; };
 		95E48AB627FAA8F9000B4A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB427FAA8F9000B4A4C /* Main.storyboard */; };
 		95E48AB827FAA8F9000B4A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB727FAA8F9000B4A4C /* Assets.xcassets */; };
 		95E48ABB27FAA8F9000B4A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */; };
+		A1499B2827FEB63800388CB5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1499B2727FEB63800388CB5 /* OnboardingViewController.swift */; };
+		A1499B2B27FEBD7600388CB5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1499B2A27FEBD7600388CB5 /* UIView+Extension.swift */; };
+		A1499B2D27FEBE6D00388CB5 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1499B2C27FEBE6D00388CB5 /* OnboardingSlide.swift */; };
+		A1499B3027FEC2BA00388CB5 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1499B2F27FEC2BA00388CB5 /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +32,14 @@
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95E48AB227FAA8F9000B4A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95E48AB527FAA8F9000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95E48AB727FAA8F9000B4A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95E48ABA27FAA8F9000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95E48ABC27FAA8F9000B4A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1499B2727FEB63800388CB5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A1499B2A27FEBD7600388CB5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A1499B2C27FEBE6D00388CB5 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		A1499B2F27FEC2BA00388CB5 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +72,14 @@
 		95E48AAD27FAA8F9000B4A4C /* MC1 Sunpride */ = {
 			isa = PBXGroup;
 			children = (
+				A1499B2927FEBD5200388CB5 /* Extensions */,
+				A1499B2527FEB4E200388CB5 /* CustomViews */,
+				A1499B2427FEB2E700388CB5 /* Views */,
+				A1499B2327FEB2CD00388CB5 /* Models */,
 				3F70208327FE4F0900B42640 /* Theme.swift */,
 				3F70207727FE434C00B42640 /* TimerView.swift */,
 				95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */,
 				95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */,
-				95E48AB227FAA8F9000B4A4C /* ViewController.swift */,
 				95E48AB427FAA8F9000B4A4C /* Main.storyboard */,
 				95E48AB727FAA8F9000B4A4C /* Assets.xcassets */,
 				95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */,
@@ -80,6 +89,46 @@
 				3F70208527FE9C2A00B42640 /* TimerView.xib */,
 			);
 			path = "MC1 Sunpride";
+			sourceTree = "<group>";
+		};
+		A1499B2327FEB2CD00388CB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1499B2C27FEBE6D00388CB5 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1499B2427FEB2E700388CB5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1499B2627FEB5FD00388CB5 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1499B2527FEB4E200388CB5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		A1499B2627FEB5FD00388CB5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A1499B2727FEB63800388CB5 /* OnboardingViewController.swift */,
+				A1499B2F27FEC2BA00388CB5 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A1499B2927FEBD5200388CB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1499B2A27FEBD7600388CB5 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,12 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
+				A1499B2B27FEBD7600388CB5 /* UIView+Extension.swift in Sources */,
+				A1499B2827FEB63800388CB5 /* OnboardingViewController.swift in Sources */,
 				3F70207A27FE435D00B42640 /* StatisticsViewController.swift in Sources */,
 				3F70207827FE434C00B42640 /* TimerView.swift in Sources */,
 				3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */,
+				A1499B3027FEC2BA00388CB5 /* OnboardingCollectionViewCell.swift in Sources */,
+				A1499B2D27FEBE6D00388CB5 /* OnboardingSlide.swift in Sources */,
 				3F70208427FE4F0900B42640 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
