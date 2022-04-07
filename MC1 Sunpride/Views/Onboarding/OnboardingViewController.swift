@@ -35,12 +35,8 @@ class OnboardingViewController: UIViewController {
                           OnboardingSlide(title: "Before you start...", description: "We'd recommend you to do these things", image: UIImage(named: "logologo.svg")),
                           OnboardingSlide(title: "Tell us a little bit about yourself", description: "", image: UIImage(named: "logologo.svg"))
                 ]
-        
               //  slides3 = [OnboardingSlide3(title: "Tell us a little bit about yourself",
-        
-                )
-                ]
-            }
+    }
   
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
