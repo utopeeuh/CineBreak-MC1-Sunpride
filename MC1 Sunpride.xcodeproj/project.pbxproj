@@ -11,6 +11,8 @@
 		3F70207A27FE435D00B42640 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207927FE435D00B42640 /* StatisticsViewController.swift */; };
 		3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207B27FE436E00B42640 /* SettingsViewController.swift */; };
 		3F70208427FE4F0900B42640 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70208327FE4F0900B42640 /* Theme.swift */; };
+		93BDDE1327FFDED40059BEC7 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDE1227FFDED40059BEC7 /* PreferencesView.swift */; };
+		93BDDE1527FFDEF00059BEC7 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDE1427FFDEF00059BEC7 /* SettingsTableViewCell.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
 		95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB227FAA8F9000B4A4C /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 		3F70207927FE435D00B42640 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		3F70207B27FE436E00B42640 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3F70208327FE4F0900B42640 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		93BDDE1227FFDED40059BEC7 /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		93BDDE1427FFDEF00059BEC7 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				95E48ABC27FAA8F9000B4A4C /* Info.plist */,
 				3F70207927FE435D00B42640 /* StatisticsViewController.swift */,
 				3F70207B27FE436E00B42640 /* SettingsViewController.swift */,
+				93BDDE1227FFDED40059BEC7 /* PreferencesView.swift */,
+				93BDDE1427FFDEF00059BEC7 /* SettingsTableViewCell.swift */,
 			);
 			path = "MC1 Sunpride";
 			sourceTree = "<group>";
@@ -152,9 +158,11 @@
 			files = (
 				95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
+				93BDDE1527FFDEF00059BEC7 /* SettingsTableViewCell.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
 				3F70207A27FE435D00B42640 /* StatisticsViewController.swift in Sources */,
 				3F70207827FE434C00B42640 /* HomeViewController.swift in Sources */,
+				93BDDE1327FFDED40059BEC7 /* PreferencesView.swift in Sources */,
 				3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */,
 				3F70208427FE4F0900B42640 /* Theme.swift in Sources */,
 			);

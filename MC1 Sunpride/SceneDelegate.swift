@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  MC1 Sunpride
+//  UserPreferenceSetting
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 04/04/22.
+//  Created by Wilbert Devin Wijaya on 07/04/22.
 //
 
 import UIKit

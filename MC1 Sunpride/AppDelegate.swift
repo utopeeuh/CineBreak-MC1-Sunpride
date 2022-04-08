@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MC1 Sunpride
+//  UserPreferenceSetting
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 04/04/22.
+//  Created by Wilbert Devin Wijaya on 07/04/22.
 //
 
 import UIKit
@@ -11,9 +11,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Theme.loadTheme()
         return true
     }
 
