@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable class TimerView: UIView
 {
     var isPlaying: Bool = false
-    var initialTime: Int32 = 10
-    var currentTime: Int32 = 10
+    var initialTime: Int32 = 2 * 60
+    var currentTime: Int32 = 2 * 60
     var timer: Timer!
     
     @IBOutlet weak var timerLogo: UIImageView!
@@ -47,7 +47,7 @@ import UIKit
             arcCenter: CGPoint(x: 140, y: 140),
             radius: 138,
             startAngle: -CGFloat.pi / 2.0,
-            endAngle: CGFloat.pi * 2.0,
+            endAngle: CGFloat.pi * 1.5,
             clockwise: true
         )
         
@@ -76,6 +76,12 @@ import UIKit
     @IBAction func onTimerButton(_ sender: Any)
     {
         isPlaying = !isPlaying
+        timerLogo.image = UIImage(named: isPlaying ? "stop.fill" : "play.fill")
+        resetAnimation()
+    }
+    
+    private func resetAnimation()
+    {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         if (isPlaying)
         {
@@ -86,7 +92,6 @@ import UIKit
                 userInfo: nil,
                 repeats: true
             )
-            timerLogo.image = UIImage(named: "stop.fill")
             animation.fromValue = 0
             animation.toValue   = 1
             animation.duration  = Double(initialTime)
@@ -95,7 +100,6 @@ import UIKit
         else
         {
             timer.invalidate()
-            timerLogo.image = UIImage(named: "play.fill")
             animation.fromValue = Double(initialTime - currentTime) / Double(initialTime)
             animation.toValue   = 0
             animation.duration  = Double(initialTime - currentTime) / Double(initialTime)
@@ -109,8 +113,13 @@ import UIKit
     @objc func onCountdown()
     {
         currentTime -= 1
-        if (currentTime == 0) { timer.invalidate() }
         updateLabel()
+        if (currentTime == 0)
+        {
+            currentTime = initialTime
+            timer.invalidate()
+            resetAnimation()
+        }
     }
     
     func updateLabel()
