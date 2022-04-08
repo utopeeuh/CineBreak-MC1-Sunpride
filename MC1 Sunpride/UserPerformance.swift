@@ -29,20 +29,30 @@ class UserPerformance{
             return
         }
         else{
-            let sessions = getSessions()
-            for s in sessions {
+            for s in getSessions() {
                 // validate if session is in the past 7 days inc. today
-                let currentDate = Date()
-                var dateComponent = DateComponents()
-                dateComponent.day = -6
-                let sixDaysAgo = Calendar.current.date(byAdding: dateComponent, to: currentDate)!
-                
-                if(s.date >= sixDaysAgo){
+                if(s.date >= subtractDay(days: 6)){
                     update(s: s)
                 }
             }
         }
-        
+    }
+    
+    func getLastWeekStat() -> Double{
+        var totalTime : Double = 0
+        for s in getSessions() {
+            if subtractDay(days: 7)...subtractDay(days: 13) ~= s.date  {
+                totalTime += s.watchTime
+            }
+        }
+        return totalTime
+    }
+    
+    private func subtractDay(days: Int) -> Date{
+        let currentDate = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = days*(-1)
+        return Calendar.current.date(byAdding: dateComponent, to: currentDate)!
     }
     
     private func update(s: Session){
