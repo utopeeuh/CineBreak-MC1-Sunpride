@@ -38,7 +38,10 @@ class SettingsTableViewCell: UITableViewCell {
         iconContainer.addSubview(iconImageView)
         
         contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        //accessoryType = .disclosureIndicator
+        accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        accessoryView?.tintColor = UIColor.whiteColor
+        backgroundColor = UIColor.greyColor
     }
     
     required init?(coder: NSCoder) {
@@ -68,6 +71,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     public func configure(with model: SettingsOption){
         label.text = model.title
+        label.textColor = UIColor.whiteColor
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
     }

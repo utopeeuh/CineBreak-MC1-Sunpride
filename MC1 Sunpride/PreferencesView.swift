@@ -20,6 +20,15 @@ struct SettingsOption {
     let handler: (() -> Void)
 }
 
+extension UIColor {
+    static let iconColor: UIColor = UIColor(named: "iconColor")!
+    static let backgroundColor: UIColor = UIColor(named: "BackgroundColor")!
+    static let blackColor: UIColor = UIColor(named: "blackColor")!
+    static let whiteColor: UIColor = UIColor(named: "whiteColor")!
+    static let orangeColor: UIColor = UIColor(named: "orangeColor")!
+    static let greyColor: UIColor = UIColor(named: "greyColor")!
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let tableView: UITableView = {
@@ -38,6 +47,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
+        tableView.backgroundColor = UIColor.backgroundColor
+        tableView.separatorColor = UIColor.whiteColor
     }
     
     func configure(){
