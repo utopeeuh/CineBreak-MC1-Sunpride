@@ -1,12 +1,6 @@
-//
-//  UserNotification.swift
-//  MC1 Sunpride
-//
-//  Created by Ramadhan Kalih Sewu on 04/04/22.
-//
-
 import Foundation
 import UserNotifications
+import UIKit
 
 /** identifier for push notification, different id for seperate banner notification, otherwise it will replace the previous */
 enum NotificationId: String, CaseIterable
@@ -83,9 +77,7 @@ class AppNotification
         {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: step.rawValue, repeats: false)
             let request = UNNotificationRequest(identifier: "\(step)", content: notificationContent, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error { print(error) }
-            }
+            UNUserNotificationCenter.current().add(request)
         }
     }
     

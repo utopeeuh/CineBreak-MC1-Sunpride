@@ -1,14 +1,8 @@
-//
-//  UserPerformance.swift
-//  MC1 Sunpride
-//
-//  Created by Tb. Daffa Amadeo Zhafrana on 07/04/22.
-//
-
 import Foundation
 
 // Call by UserPerformance.shared.att
-class UserPerformance{
+class UserPerformance
+{
     
     private let defaults = UserDefaults.standard
     

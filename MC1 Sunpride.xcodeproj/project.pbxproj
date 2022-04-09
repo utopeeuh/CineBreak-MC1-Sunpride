@@ -7,59 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8F27FA9CB2000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48A8E27FA9CB2000B4A4C /* AppDelegate.swift */; };
-		95E48A9127FA9CB2000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48A9027FA9CB2000B4A4C /* SceneDelegate.swift */; };
-		95E48A9327FA9CB2000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48A9227FA9CB2000B4A4C /* ViewController.swift */; };
-		95E48A9627FA9CB2000B4A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48A9427FA9CB2000B4A4C /* Main.storyboard */; };
-		95E48A9827FA9CB3000B4A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E48A9727FA9CB3000B4A4C /* Assets.xcassets */; };
-		95E48A9B27FA9CB3000B4A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48A9927FA9CB3000B4A4C /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		95E48A8B27FA9CB2000B4A4C /* Mini Challenge 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95E48A8E27FA9CB2000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95E48A9027FA9CB2000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95E48A9227FA9CB2000B4A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95E48A9527FA9CB2000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95E48A9727FA9CB3000B4A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95E48A9A27FA9CB3000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		95E48A9C27FA9CB3000B4A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		95E48A8827FA9CB2000B4A4C /* Frameworks */ = {
-=======
+		3F2E52C92801860A00CC0CE4 /* PerformanceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52B82801860A00CC0CE4 /* PerformanceView.storyboard */; };
+		3F2E52CB2801860A00CC0CE4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52BA2801860A00CC0CE4 /* TimerView.swift */; };
+		3F2E52D02801860A00CC0CE4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52BF2801860A00CC0CE4 /* Session.swift */; };
+		3F2E52D22801860A00CC0CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52C12801860A00CC0CE4 /* ViewController.swift */; };
+		3F2E52D42801860A00CC0CE4 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52C32801860A00CC0CE4 /* TimerView.xib */; };
+		3F2E52D52801860A00CC0CE4 /* UserPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52C42801860A00CC0CE4 /* UserPerformance.swift */; };
+		3F2E52D62801860A00CC0CE4 /* SessionTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52C52801860A00CC0CE4 /* SessionTimer.swift */; };
+		3F2E52D72801860A00CC0CE4 /* PerformanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */; };
+		3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52DA2801899F00CC0CE4 /* SystemData.swift */; };
+		3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52DC280193DA00CC0CE4 /* Main.storyboard */; };
 		951EFD2027FBFDC200AFEFCF /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
-		95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB227FAA8F9000B4A4C /* ViewController.swift */; };
-		95E48AB627FAA8F9000B4A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB427FAA8F9000B4A4C /* Main.storyboard */; };
 		95E48AB827FAA8F9000B4A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB727FAA8F9000B4A4C /* Assets.xcassets */; };
 		95E48ABB27FAA8F9000B4A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */; };
-		A1F404C327FD61DD00593FA7 /* ResetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F404C027FD61DC00593FA7 /* ResetTableViewCell.swift */; };
-		A1F404C427FD61DD00593FA7 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F404C127FD61DC00593FA7 /* SettingsTableViewCell.swift */; };
-		A1F404C527FD61DD00593FA7 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F404C227FD61DC00593FA7 /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2E52B82801860A00CC0CE4 /* PerformanceView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PerformanceView.storyboard; sourceTree = "<group>"; };
+		3F2E52BA2801860A00CC0CE4 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		3F2E52BF2801860A00CC0CE4 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		3F2E52C12801860A00CC0CE4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F2E52C32801860A00CC0CE4 /* TimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
+		3F2E52C42801860A00CC0CE4 /* UserPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPerformance.swift; sourceTree = "<group>"; };
+		3F2E52C52801860A00CC0CE4 /* SessionTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTimer.swift; sourceTree = "<group>"; };
+		3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceController.swift; sourceTree = "<group>"; };
+		3F2E52DA2801899F00CC0CE4 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
+		3F2E52DC280193DA00CC0CE4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95E48AB227FAA8F9000B4A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95E48AB527FAA8F9000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95E48AB727FAA8F9000B4A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95E48ABA27FAA8F9000B4A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95E48ABC27FAA8F9000B4A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1F404C027FD61DC00593FA7 /* ResetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetTableViewCell.swift; sourceTree = "<group>"; };
-		A1F404C127FD61DC00593FA7 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		A1F404C227FD61DC00593FA7 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		95E48AA827FAA8F9000B4A4C /* Frameworks */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,20 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8227FA9CB2000B4A4C = {
-			isa = PBXGroup;
-			children = (
-				95E48A8D27FA9CB2000B4A4C /* Mini Challenge 1 */,
-				95E48A8C27FA9CB2000B4A4C /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		95E48A8C27FA9CB2000B4A4C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				95E48A8B27FA9CB2000B4A4C /* Mini Challenge 1.app */,
-=======
 		95E48AA227FAA8F9000B4A4C = {
 			isa = PBXGroup;
 			children = (
@@ -95,56 +67,36 @@
 			isa = PBXGroup;
 			children = (
 				95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8D27FA9CB2000B4A4C /* Mini Challenge 1 */ = {
-			isa = PBXGroup;
-			children = (
-				95E48A8E27FA9CB2000B4A4C /* AppDelegate.swift */,
-				95E48A9027FA9CB2000B4A4C /* SceneDelegate.swift */,
-				95E48A9227FA9CB2000B4A4C /* ViewController.swift */,
-				95E48A9427FA9CB2000B4A4C /* Main.storyboard */,
-				95E48A9727FA9CB3000B4A4C /* Assets.xcassets */,
-				95E48A9927FA9CB3000B4A4C /* LaunchScreen.storyboard */,
-				95E48A9C27FA9CB3000B4A4C /* Info.plist */,
-			);
-			path = "Mini Challenge 1";
-=======
 		95E48AAD27FAA8F9000B4A4C /* MC1 Sunpride */ = {
 			isa = PBXGroup;
 			children = (
+				3F2E52DA2801899F00CC0CE4 /* SystemData.swift */,
 				95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */,
 				95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */,
-				95E48AB227FAA8F9000B4A4C /* ViewController.swift */,
+				3F2E52BF2801860A00CC0CE4 /* Session.swift */,
+				3F2E52C52801860A00CC0CE4 /* SessionTimer.swift */,
+				3F2E52BA2801860A00CC0CE4 /* TimerView.swift */,
+				3F2E52C32801860A00CC0CE4 /* TimerView.xib */,
+				3F2E52C42801860A00CC0CE4 /* UserPerformance.swift */,
+				3F2E52C12801860A00CC0CE4 /* ViewController.swift */,
 				951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */,
-				95E48AB427FAA8F9000B4A4C /* Main.storyboard */,
 				95E48AB727FAA8F9000B4A4C /* Assets.xcassets */,
 				95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */,
 				95E48ABC27FAA8F9000B4A4C /* Info.plist */,
-				A1F404C027FD61DC00593FA7 /* ResetTableViewCell.swift */,
-				A1F404C127FD61DC00593FA7 /* SettingsTableViewCell.swift */,
-				A1F404C227FD61DC00593FA7 /* SwitchTableViewCell.swift */,
+				3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */,
+				3F2E52B82801860A00CC0CE4 /* PerformanceView.storyboard */,
+				3F2E52DC280193DA00CC0CE4 /* Main.storyboard */,
 			);
 			path = "MC1 Sunpride";
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8A27FA9CB2000B4A4C /* Mini Challenge 1 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95E48A9F27FA9CB3000B4A4C /* Build configuration list for PBXNativeTarget "Mini Challenge 1" */;
-			buildPhases = (
-				95E48A8727FA9CB2000B4A4C /* Sources */,
-				95E48A8827FA9CB2000B4A4C /* Frameworks */,
-				95E48A8927FA9CB2000B4A4C /* Resources */,
-=======
 		95E48AAA27FAA8F9000B4A4C /* MC1 Sunpride */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95E48ABF27FAA8F9000B4A4C /* Build configuration list for PBXNativeTarget "MC1 Sunpride" */;
@@ -152,51 +104,32 @@
 				95E48AA727FAA8F9000B4A4C /* Sources */,
 				95E48AA827FAA8F9000B4A4C /* Frameworks */,
 				95E48AA927FAA8F9000B4A4C /* Resources */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-			name = "Mini Challenge 1";
-			productName = "Mini Challenge 1";
-			productReference = 95E48A8B27FA9CB2000B4A4C /* Mini Challenge 1.app */;
-=======
 			name = "MC1 Sunpride";
 			productName = "MC1 Sunpride";
 			productReference = 95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */;
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8327FA9CB2000B4A4C /* Project object */ = {
-=======
 		95E48AA327FAA8F9000B4A4C /* Project object */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-					95E48A8A27FA9CB2000B4A4C = {
-=======
 					95E48AAA27FAA8F9000B4A4C = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-			buildConfigurationList = 95E48A8627FA9CB2000B4A4C /* Build configuration list for PBXProject "Mini Challenge 1" */;
-=======
 			buildConfigurationList = 95E48AA627FAA8F9000B4A4C /* Build configuration list for PBXProject "MC1 Sunpride" */;
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,102 +137,56 @@
 				en,
 				Base,
 			);
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-			mainGroup = 95E48A8227FA9CB2000B4A4C;
-			productRefGroup = 95E48A8C27FA9CB2000B4A4C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				95E48A8A27FA9CB2000B4A4C /* Mini Challenge 1 */,
-=======
 			mainGroup = 95E48AA227FAA8F9000B4A4C;
 			productRefGroup = 95E48AAC27FAA8F9000B4A4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				95E48AAA27FAA8F9000B4A4C /* MC1 Sunpride */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8927FA9CB2000B4A4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95E48A9B27FA9CB3000B4A4C /* LaunchScreen.storyboard in Resources */,
-				95E48A9827FA9CB3000B4A4C /* Assets.xcassets in Resources */,
-				95E48A9627FA9CB2000B4A4C /* Main.storyboard in Resources */,
-=======
 		95E48AA927FAA8F9000B4A4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				95E48ABB27FAA8F9000B4A4C /* LaunchScreen.storyboard in Resources */,
+				3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */,
+				3F2E52C92801860A00CC0CE4 /* PerformanceView.storyboard in Resources */,
+				3F2E52D42801860A00CC0CE4 /* TimerView.xib in Resources */,
 				95E48AB827FAA8F9000B4A4C /* Assets.xcassets in Resources */,
-				95E48AB627FAA8F9000B4A4C /* Main.storyboard in Resources */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8727FA9CB2000B4A4C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95E48A9327FA9CB2000B4A4C /* ViewController.swift in Sources */,
-				95E48A8F27FA9CB2000B4A4C /* AppDelegate.swift in Sources */,
-				95E48A9127FA9CB2000B4A4C /* SceneDelegate.swift in Sources */,
-=======
 		95E48AA727FAA8F9000B4A4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2E52D72801860A00CC0CE4 /* PerformanceController.swift in Sources */,
+				3F2E52D02801860A00CC0CE4 /* Session.swift in Sources */,
+				3F2E52D52801860A00CC0CE4 /* UserPerformance.swift in Sources */,
+				3F2E52CB2801860A00CC0CE4 /* TimerView.swift in Sources */,
+				3F2E52D62801860A00CC0CE4 /* SessionTimer.swift in Sources */,
 				951EFD2027FBFDC200AFEFCF /* AppNotification.swift in Sources */,
-				95E48AB327FAA8F9000B4A4C /* ViewController.swift in Sources */,
-				A1F404C327FD61DD00593FA7 /* ResetTableViewCell.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
-				A1F404C427FD61DD00593FA7 /* SettingsTableViewCell.swift in Sources */,
+				3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
-				A1F404C527FD61DD00593FA7 /* SwitchTableViewCell.swift in Sources */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
+				3F2E52D22801860A00CC0CE4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A9427FA9CB2000B4A4C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95E48A9527FA9CB2000B4A4C /* Base */,
-=======
-		95E48AB427FAA8F9000B4A4C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95E48AB527FAA8F9000B4A4C /* Base */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A9927FA9CB3000B4A4C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95E48A9A27FA9CB3000B4A4C /* Base */,
-=======
 		95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				95E48ABA27FAA8F9000B4A4C /* Base */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -307,11 +194,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A9D27FA9CB3000B4A4C /* Debug */ = {
-=======
 		95E48ABD27FAA8F9000B4A4C /* Debug */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,11 +254,7 @@
 			};
 			name = Debug;
 		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A9E27FA9CB3000B4A4C /* Release */ = {
-=======
 		95E48ABE27FAA8F9000B4A4C /* Release */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -429,11 +308,7 @@
 			};
 			name = Release;
 		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48AA027FA9CB3000B4A4C /* Debug */ = {
-=======
 		95E48AC027FAA8F9000B4A4C /* Debug */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -443,14 +318,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-				INFOPLIST_FILE = "Mini Challenge 1/Info.plist";
-=======
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
+				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,11 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunpride.Mini-Challenge-1";
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunpride.cinebreak;
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,11 +340,7 @@
 			};
 			name = Debug;
 		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48AA127FA9CB3000B4A4C /* Release */ = {
-=======
 		95E48AC127FAA8F9000B4A4C /* Release */ = {
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -485,14 +350,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-				INFOPLIST_FILE = "Mini Challenge 1/Info.plist";
-=======
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
+				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -500,11 +363,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunpride.Mini-Challenge-1";
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunpride.cinebreak;
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -516,45 +375,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A8627FA9CB2000B4A4C /* Build configuration list for PBXProject "Mini Challenge 1" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95E48A9D27FA9CB3000B4A4C /* Debug */,
-				95E48A9E27FA9CB3000B4A4C /* Release */,
-=======
 		95E48AA627FAA8F9000B4A4C /* Build configuration list for PBXProject "MC1 Sunpride" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95E48ABD27FAA8F9000B4A4C /* Debug */,
 				95E48ABE27FAA8F9000B4A4C /* Release */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-		95E48A9F27FA9CB3000B4A4C /* Build configuration list for PBXNativeTarget "Mini Challenge 1" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95E48AA027FA9CB3000B4A4C /* Debug */,
-				95E48AA127FA9CB3000B4A4C /* Release */,
-=======
 		95E48ABF27FAA8F9000B4A4C /* Build configuration list for PBXNativeTarget "MC1 Sunpride" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95E48AC027FAA8F9000B4A4C /* Debug */,
 				95E48AC127FAA8F9000B4A4C /* Release */,
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-<<<<<<< HEAD:Mini Challenge 1.xcodeproj/project.pbxproj
-	rootObject = 95E48A8327FA9CB2000B4A4C /* Project object */;
-=======
 	rootObject = 95E48AA327FAA8F9000B4A4C /* Project object */;
->>>>>>> 57fa8a8d73d80082f9a827b3e1c8350a1e3ba4b9:MC1 Sunpride.xcodeproj/project.pbxproj
 }

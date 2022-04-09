@@ -1,14 +1,7 @@
-//
-//  PerformanceController.swift
-//  MC1 Sunpride
-//
-//  Created by Tb. Daffa Amadeo Zhafrana on 07/04/22.
-//
-
 import UIKit
 
-class PerformanceController: UIViewController {
-    
+class PerformanceController: UIViewController
+{
     var breaksTakenPerHour : Double = 0
     var avgWatchTime : Double = 0
     

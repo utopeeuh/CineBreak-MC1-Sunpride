@@ -1,23 +1,18 @@
-//
-//  Session.swift
-//  MC1 Sunpride
-//
-//  Created by Tb. Daffa Amadeo Zhafrana on 06/04/22.
-//
-
 import Foundation
+
 let SESSIONS_KEY = "SESSIONS_KEY"
 let encoder = JSONEncoder()
 
-struct Session: Codable {
+struct Session: Codable
+{
     var date: Date
     var watchTime: Double
     var breaksTaken : Int
     var isOvertime : Bool
 }
 
-func getSessions() -> [Session]{
-    
+func getSessions() -> [Session]
+{
     let emptySessions : [Session] = []
     
     // retrieve from UserDefaults if exists
@@ -34,7 +29,8 @@ func getSessions() -> [Session]{
     return emptySessions
 }
 
-func addSession(newSession: Session) -> Void{
+func addSession(newSession: Session) -> Void
+{
     var sessions = getSessions()
     sessions.append(newSession)
     if let data = try? PropertyListEncoder().encode(sessions) {

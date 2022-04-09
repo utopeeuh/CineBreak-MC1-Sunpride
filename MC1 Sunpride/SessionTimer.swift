@@ -1,10 +1,3 @@
-//
-//  SessionTimer.swift
-//  MC1 Sunpride
-//
-//  Created by Tb. Daffa Amadeo Zhafrana on 07/04/22.
-//
-
 import Foundation
 import UIKit
 
@@ -13,8 +6,8 @@ let START_TIME_KEY = "startTime"
 let STOP_TIME_KEY = "stopTime"
 let COUNTING_KEY = "countingKey"
 
-class SessionTimer{
-    
+class SessionTimer
+{
     var sessionTime: CVarArg?
     var timerCounting:Bool = false
     var startTime:Date?

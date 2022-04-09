@@ -1,14 +1,8 @@
-//
-//  ResetTableViewCell.swift
-//  MC1-Sunpride
-//
-//  Created by Nikita Felicia on 05/04/22.
-//
-
 import Foundation
 import UIKit
 
-class ResetTableViewCell: UITableViewCell {
+class ResetTableViewCell: UITableViewCell
+{
     static let identifier = "ResetTableViewCell"
     
     private let label: UILabel = {
@@ -21,7 +15,7 @@ class ResetTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.clipsToBounds = true
         accessoryType = .none
-        backgroundColor = UIColor.greyColor
+        backgroundColor = UIColor.gray
     }
     
     required init?(coder: NSCoder){

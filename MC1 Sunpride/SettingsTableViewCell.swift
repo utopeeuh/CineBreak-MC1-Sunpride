@@ -1,10 +1,3 @@
-//
-//  SettingsTableViewCell.swift
-//  MC1-Sunpride
-//
-//  Created by Nikita Felicia on 05/04/22.
-//
-
 import Foundation
 import UIKit
 
@@ -41,8 +34,8 @@ class SettingsTableViewCell: UITableViewCell {
         contentView.addSubview(iconImageView)
         contentView.clipsToBounds = true
         accessoryView = UIImageView(image: UIImage(systemName: "chevron.right"))
-        accessoryView?.tintColor = UIColor.whiteColor
-        backgroundColor = UIColor.greyColor
+        accessoryView?.tintColor = UIColor.white
+        backgroundColor = UIColor.gray
         
     //iconImageView.separatorColor = UIColor.white
        //contentView.separatorColor = UIColor.whiteColor
@@ -114,7 +107,7 @@ class SettingsTableViewCell: UITableViewCell {
     public func configure(with model: SettingsOption){
 
         label.text = model.title
-        label.textColor = UIColor.whiteColor
+        label.textColor = UIColor.white
         //label.separatorColor = UIColor.systemBlue
         iconImageView.image = model.icon
     //iconImageView.separatorColor = model.iconBackgroundColor

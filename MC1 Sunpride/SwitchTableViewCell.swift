@@ -1,10 +1,3 @@
-//
-//  SettingsTableViewCell.swift
-//  MC1-Sunpride
-//
-//  Created by Nikita Felicia on 05/04/22.
-//
-
 import Foundation
 import UIKit
 
@@ -35,7 +28,7 @@ class SwitchTableViewCell: UITableViewCell {
     private let mySwitch: UISwitch = {
         let mySwitch = UISwitch()
        
-        mySwitch.onTintColor = .orangeColor
+        mySwitch.onTintColor = UIColor.orange
         return mySwitch
     }()
     
@@ -46,7 +39,7 @@ class SwitchTableViewCell: UITableViewCell {
         contentView.addSubview(mySwitch)
         contentView.addSubview(iconImageView)
         
-        backgroundColor = UIColor.greyColor
+        backgroundColor = UIColor.gray
         contentView.clipsToBounds = true
         
         //buat > di settings
@@ -95,7 +88,7 @@ class SwitchTableViewCell: UITableViewCell {
     
     public func configure(with model: SettingsSwitchOption){
         label.text = model.title
-        label.textColor = UIColor.whiteColor
+        label.textColor = UIColor.white
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
         mySwitch.isOn = model.isOn
