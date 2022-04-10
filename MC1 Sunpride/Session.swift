@@ -3,6 +3,8 @@ import Foundation
 let SESSIONS_KEY = "SESSIONS_KEY"
 let encoder = JSONEncoder()
 
+private var breakCounter : Int = 0
+
 struct Session: Codable
 {
     var date: Date
@@ -36,6 +38,17 @@ func addSession(newSession: Session) -> Void
     if let data = try? PropertyListEncoder().encode(sessions) {
             UserDefaults.standard.set(data, forKey: SESSIONS_KEY)
     }
+}
+
+func addCounter(){
+    breakCounter += 1
+}
+
+func createSession (startTime: Date){
+    let watchTime = Date().timeIntervalSince(startTime)
+    let isOvertime = watchTime > getWatchTime() ? true : false
+    let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: isOvertime)
+    addSession(newSession: newSession)
 }
 
 

@@ -77,6 +77,10 @@ class UserPreferenceController: UIViewController {
     }
 }
 
+func getWatchTime() -> Double {
+    return UserDefaults.standard.double(forKey: "watchHour")
+}
+
 extension UserPreferenceController: UIPickerViewDelegate, UIPickerViewDataSource {
      
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
