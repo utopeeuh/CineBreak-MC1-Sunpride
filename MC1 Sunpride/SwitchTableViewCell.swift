@@ -86,12 +86,12 @@ class SwitchTableViewCell: UITableViewCell {
         mySwitch.isOn = false
     }
     
-    public func configure(with model: SettingsSwitchOption){
-        label.text = model.title
-        label.textColor = UIColor.white
-        iconImageView.image = model.icon
-        iconContainer.backgroundColor = model.iconBackgroundColor
-        mySwitch.isOn = model.isOn
-    }
+    // public func configure(with model: SettingsSwitchOption){
+    //     label.text = model.title
+    //     label.textColor = UIColor.white
+    //     iconImageView.image = model.icon
+    //     iconContainer.backgroundColor = model.iconBackgroundColor
+    //     mySwitch.isOn = model.isOn
+    // }
 }
 

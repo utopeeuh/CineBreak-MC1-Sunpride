@@ -38,9 +38,8 @@ class ResetTableViewCell: UITableViewCell
         label.text = nil
     }
     
-    public func configure(with model: ResetOption){
-        label.text = model.title
-        label.textColor = UIColor.systemRed
-
-    }
+    // public func configure(with model: ResetOption){
+    //     label.text = model.title
+    //     label.textColor = UIColor.systemRed
+    // }
 }

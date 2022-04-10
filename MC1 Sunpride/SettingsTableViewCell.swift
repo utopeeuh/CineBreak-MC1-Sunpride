@@ -104,14 +104,13 @@ class SettingsTableViewCell: UITableViewCell {
         
     }
     
-    public func configure(with model: SettingsOption){
-
-        label.text = model.title
-        label.textColor = UIColor.white
-        //label.separatorColor = UIColor.systemBlue
-        iconImageView.image = model.icon
-    //iconImageView.separatorColor = model.iconBackgroundColor
-        //iconContainer.separatorColor = model.iconBackgroundColor
-        iconContainer.backgroundColor = model.iconBackgroundColor
-    }
+    // public func configure(with model: SettingsOption){
+    //     label.text = model.title
+    //     label.textColor = UIColor.white
+    //     //label.separatorColor = UIColor.systemBlue
+    //     iconImageView.image = model.icon
+    //     //iconImageView.separatorColor = model.iconBackgroundColor
+    //     //iconContainer.separatorColor = model.iconBackgroundColor
+    //     iconContainer.backgroundColor = model.iconBackgroundColor
+    // }
 }

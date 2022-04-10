@@ -102,9 +102,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZY-S5-IDU">
-                                <rect key="frame" x="93.009057455920811" y="750" width="200.00000000000003" height="31.999999999999844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZY-S5-IDU">
+                                <rect key="frame" x="95" y="747" width="200" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Not Now">
                                     <color key="baseForegroundColor" name="colorHighlight"/>
@@ -113,9 +112,8 @@
                                     <action selector="onNotNowButton:" destination="9Vy-a9-YyW" eventType="touchUpInside" id="Q5a-0q-MPf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-St-qFs">
-                                <rect key="frame" x="44.009057455920811" y="706" width="299.99999999999989" height="32.000000000000057"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-St-qFs">
+                                <rect key="frame" x="16" y="699" width="358" height="40"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Give Permission">
                                     <color key="baseForegroundColor" name="blackColor"/>
@@ -128,6 +126,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a8p-tO-cCs"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a8p-tO-cCs" firstAttribute="trailing" secondItem="uZY-S5-IDU" secondAttribute="trailing" constant="95" id="NWt-Ic-meM"/>
+                            <constraint firstItem="uZY-S5-IDU" firstAttribute="leading" secondItem="a8p-tO-cCs" secondAttribute="leading" constant="95" id="R5a-37-KE6"/>
+                            <constraint firstItem="a8p-tO-cCs" firstAttribute="trailing" secondItem="Ra2-St-qFs" secondAttribute="trailing" constant="16" id="dWC-jQ-PwD"/>
+                            <constraint firstItem="a8p-tO-cCs" firstAttribute="bottom" secondItem="uZY-S5-IDU" secondAttribute="bottom" constant="32" id="eay-ih-3Gq"/>
+                            <constraint firstItem="Ra2-St-qFs" firstAttribute="leading" secondItem="a8p-tO-cCs" secondAttribute="leading" constant="16" id="hro-ec-XoT"/>
+                            <constraint firstItem="uZY-S5-IDU" firstAttribute="top" secondItem="Ra2-St-qFs" secondAttribute="bottom" constant="12" id="v7w-M6-edx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIO-in-4b5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
