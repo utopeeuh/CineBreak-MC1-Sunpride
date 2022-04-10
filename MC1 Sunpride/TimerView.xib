@@ -12,6 +12,7 @@
                 <outlet property="labelMinute" destination="2Pr-FH-Z43" id="rtR-oh-Tdp"/>
                 <outlet property="labelSecond" destination="8ph-QE-aIK" id="WaJ-cY-J7U"/>
                 <outlet property="timerLogo" destination="Kbf-iY-pBb" id="q9b-hR-ADi"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fe9-Pu-oGH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

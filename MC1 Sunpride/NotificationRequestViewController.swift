@@ -1,26 +1,11 @@
 import Foundation
 import UIKit
 
-class NotificationRequestView: UIView
+class NotificationRequestViewController: UIViewController
 {
-    override init(frame: CGRect)
+    override func viewDidLoad()
     {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder)
-    {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    func setup()
-    {
-        let bundle  = Bundle(for: NotificationRequestView.self)
-        let view    = bundle.loadNibNamed("NotificationRequestView", owner: self, options: nil)![0] as! UIView
-        view.frame  = self.bounds
-        addSubview(view)
+        super.viewDidLoad()
     }
     
     @IBAction func onGivePermissionButton(_ sender: Any)
@@ -34,7 +19,7 @@ class NotificationRequestView: UIView
             {
                 AppNotification.requestAuthorization() { (granted, error) in
                     if let error = error { print(error) }
-                    if (granted) { DispatchQueue.main.async { self.removeFromSuperview() }}
+                    if (granted) { DispatchQueue.main.async { self.dismiss(animated: true) }}
                 }
             }
             else if (status == .denied)
@@ -44,6 +29,6 @@ class NotificationRequestView: UIView
     
     @IBAction func onNotNowButton(_ sender: Any)
     {
-        self.removeFromSuperview()
+        self.dismiss(animated: true)
     }
 }

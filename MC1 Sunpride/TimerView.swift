@@ -1,15 +1,10 @@
-//
-//  HomeViewController.swift
-//  MC1 Sunpride
-//
-//  Created by Ramadhan Kalih Sewu on 07/04/22.
-//
-
 import Foundation
 import UIKit
 
 @IBDesignable class TimerView: UIView
 {
+    @IBOutlet var view: UIView!
+    
     @IBInspectable var initialTime: UInt = 1 { didSet {
         currentTime = initialTime
     }}
@@ -51,10 +46,12 @@ import UIKit
     {
         assert(initialTime != 0)
         currentTime = initialTime
-        let bundle  = Bundle(for: TimerView.self)
-        let view    = bundle.loadNibNamed("TimerView", owner: self, options: nil)![0] as! UIView
-        view.frame  = self.bounds
+        
+        let bundle = Bundle(for: TimerView.self)
+        bundle.loadNibNamed(String(describing: TimerView.self), owner: self, options: nil)
+        view.frame = self.bounds
         addSubview(view)
+        
         // circular progressing bar arc center relative to button
         let center = CGPoint(
             x: buttonTimer.frame.midX,
