@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  UserPreference
+//  UserPreferenceSetting
 //
-//  Created by Wilbert Devin Wijaya on 05/04/22.
+//  Created by Wilbert Devin Wijaya on 07/04/22.
 //
 
 import UIKit
