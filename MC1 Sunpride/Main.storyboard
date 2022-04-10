@@ -50,9 +50,12 @@
                                 <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-Zt-mZv" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
-                                <rect key="frame" x="95" y="193" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-Zt-mZv" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
+                                <rect key="frame" x="95" y="194" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Mbg-kX-95q"/>
+                                    <constraint firstAttribute="height" constant="200" id="b1v-a9-eEz"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
                                         <integer key="value" value="10"/>
@@ -63,8 +66,10 @@
                         <viewLayoutGuide key="safeArea" id="jb0-ED-yIF"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="top" secondItem="jb0-ED-yIF" secondAttribute="top" constant="30" id="1uF-NT-Ge8"/>
-                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="leading" secondItem="jb0-ED-yIF" secondAttribute="leading" constant="30" id="acO-o9-4GG"/>
+                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="top" secondItem="jb0-ED-yIF" secondAttribute="top" constant="30" id="Je4-gV-a8Z"/>
+                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="leading" secondItem="jb0-ED-yIF" secondAttribute="leading" constant="30" id="NbJ-bl-mUa"/>
+                            <constraint firstItem="Lpf-Zt-mZv" firstAttribute="top" secondItem="QHA-QX-PUJ" secondAttribute="bottom" constant="90" id="PT9-pc-Cuy"/>
+                            <constraint firstItem="Lpf-Zt-mZv" firstAttribute="centerX" secondItem="aiy-QU-a9G" secondAttribute="centerX" id="Tmp-9b-Xob"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" selectedImage="house.fill" id="bam-LK-BGs"/>
@@ -113,7 +118,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-St-qFs">
-                                <rect key="frame" x="16" y="699" width="358" height="40"/>
+                                <rect key="frame" x="16" y="694" width="358" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RFV-k1-HGZ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Give Permission">
                                     <color key="baseForegroundColor" name="blackColor"/>
