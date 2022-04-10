@@ -25,12 +25,10 @@ class AppNotification
 {
     private init() {}
     
-    public static func requestAuthorization() -> Void
+    public static func requestAuthorization(completionHandler: @escaping (Bool, Error?) -> Void) -> Void
     {
         let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (granted, error) in
-            if let error = error { print(error) }
-        }
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: completionHandler)
     }
     
     public static func getAuthorizationStatus() async -> UNAuthorizationStatus

@@ -27,12 +27,17 @@ class NotificationRequestView: UIView
     {
         Task(priority: .high)
         {
-            let authorizationStatus = await AppNotification.getAuthorizationStatus()
+            let status = await AppNotification.getAuthorizationStatus()
             let appSettingURL = URL(string: UIApplication.openSettingsURLString + Bundle.main.bundleIdentifier!)!
             
-            if (authorizationStatus == .notDetermined)
-                { AppNotification.requestAuthorization() }
-            if (authorizationStatus == .denied)
+            if (status == .notDetermined)
+            {
+                AppNotification.requestAuthorization() { (granted, error) in
+                    if let error = error { print(error) }
+                    if (granted) { DispatchQueue.main.async { self.removeFromSuperview() }}
+                }
+            }
+            else if (status == .denied)
                 { await UIApplication.shared.open(appSettingURL) }
         }
     }
