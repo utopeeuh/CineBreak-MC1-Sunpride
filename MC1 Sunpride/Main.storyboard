@@ -16,15 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwt-G2-Yi4" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
-                                <rect key="frame" x="95" y="171" width="200" height="200"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4r-Wj-aMY" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
+                                <rect key="frame" x="95" y="152" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="moveClockwise" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

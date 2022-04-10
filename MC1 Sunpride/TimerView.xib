@@ -53,7 +53,7 @@
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-iY-pBb">
                     <rect key="frame" x="71" y="120" width="58" height="54"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <color key="tintColor" red="0.95686274770000002" green="0.78431367870000002" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
             </subviews>

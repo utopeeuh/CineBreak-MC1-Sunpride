@@ -17,6 +17,8 @@
 		3F2E52D72801860A00CC0CE4 /* PerformanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */; };
 		3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52DA2801899F00CC0CE4 /* SystemData.swift */; };
 		3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52DC280193DA00CC0CE4 /* Main.storyboard */; };
+		3F35A0C728027DB600EB347F /* NotificationRequestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F35A0C628027DB600EB347F /* NotificationRequestView.xib */; };
+		3F35A0CB2802874700EB347F /* NotificationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35A0CA2802874700EB347F /* NotificationRequestView.swift */; };
 		951EFD2027FBFDC200AFEFCF /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
@@ -35,6 +37,8 @@
 		3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceController.swift; sourceTree = "<group>"; };
 		3F2E52DA2801899F00CC0CE4 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
 		3F2E52DC280193DA00CC0CE4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3F35A0C628027DB600EB347F /* NotificationRequestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationRequestView.xib; sourceTree = "<group>"; };
+		3F35A0CA2802874700EB347F /* NotificationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequestView.swift; sourceTree = "<group>"; };
 		951EFD1F27FBFDC200AFEFCF /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				3F2E52C62801860A00CC0CE4 /* PerformanceController.swift */,
 				3F2E52B82801860A00CC0CE4 /* PerformanceView.storyboard */,
 				3F2E52DC280193DA00CC0CE4 /* Main.storyboard */,
+				3F35A0C628027DB600EB347F /* NotificationRequestView.xib */,
+				3F35A0CA2802874700EB347F /* NotificationRequestView.swift */,
 			);
 			path = "MC1 Sunpride";
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 				3F2E52C92801860A00CC0CE4 /* PerformanceView.storyboard in Resources */,
 				3F2E52D42801860A00CC0CE4 /* TimerView.xib in Resources */,
 				95E48AB827FAA8F9000B4A4C /* Assets.xcassets in Resources */,
+				3F35A0C728027DB600EB347F /* NotificationRequestView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +176,7 @@
 			files = (
 				3F2E52D72801860A00CC0CE4 /* PerformanceController.swift in Sources */,
 				3F2E52D02801860A00CC0CE4 /* Session.swift in Sources */,
+				3F35A0CB2802874700EB347F /* NotificationRequestView.swift in Sources */,
 				3F2E52D52801860A00CC0CE4 /* UserPerformance.swift in Sources */,
 				3F2E52CB2801860A00CC0CE4 /* TimerView.swift in Sources */,
 				3F2E52D62801860A00CC0CE4 /* SessionTimer.swift in Sources */,
@@ -316,7 +324,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M3J6YQYJKM;
+				DEVELOPMENT_TEAM = 435LRWY56J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;
@@ -348,7 +356,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M3J6YQYJKM;
+				DEVELOPMENT_TEAM = 435LRWY56J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MC1 Sunpride/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CineBreak;

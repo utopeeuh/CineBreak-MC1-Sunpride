@@ -29,6 +29,7 @@ import UIKit
     
     var isPlaying: Bool = false
     var timer: Timer!
+    var progressionPath: CGPath!
     var changeStateLock = NSLock()
     let shapeLayer = CAShapeLayer()
     
@@ -73,6 +74,7 @@ import UIKit
         shapeLayer.fillColor   = UIColor.clear.cgColor
         shapeLayer.lineWidth   = 25
         shapeLayer.lineCap     = .round
+        shapeLayer.strokeEnd   = fillProgress ? 0 : 1
         // track layer
         let trackLayer         = CAShapeLayer()
         trackLayer.path        = circPath.cgPath

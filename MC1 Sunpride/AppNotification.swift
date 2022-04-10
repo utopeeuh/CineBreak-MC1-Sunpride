@@ -17,7 +17,7 @@ enum BreakNotificationStep: TimeInterval, CaseIterable
 }
 
 let BREAK_NOTIFICATION_ACTION_CALLBACK: [(title: String, options: UNNotificationActionOptions, callback: () -> Void)] = [
-    ("Guide Me", [.foreground, .destructive], AppNotification.onGuideMeAction),
+    ("Guide Me", [.foreground], AppNotification.onGuideMeAction),
     ("I Have Done It", [.destructive], AppNotification.onIHaveDoneItAction),
 ]
 
@@ -33,11 +33,10 @@ class AppNotification
         }
     }
     
-    public static func printAuthorizationStatus() -> Void
+    public static func getAuthorizationStatus() async -> UNAuthorizationStatus
     {
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            print(settings.authorizationStatus.rawValue)
-        }
+        let settings = await UNUserNotificationCenter.current().notificationSettings()
+        return settings.authorizationStatus
     }
     
     public static func sendNotification() -> Void
@@ -92,14 +91,12 @@ class AppNotification
     
     static func onGuideMeAction() -> Void
     {
-        print("Guide Me")
         resetBreakNotification()
         registerBreakNotification()
     }
     
     static func onIHaveDoneItAction() -> Void
     {
-        print("I Have Done It")
         resetBreakNotification()
         registerBreakNotification()
     }
