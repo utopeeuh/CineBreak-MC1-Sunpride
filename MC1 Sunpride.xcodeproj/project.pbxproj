@@ -10,6 +10,7 @@
 		3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52DA2801899F00CC0CE4 /* SystemData.swift */; };
 		3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52DC280193DA00CC0CE4 /* Main.storyboard */; };
 		3F35A0D52802D66100EB347F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35A0D42802D66100EB347F /* HomeViewController.swift */; };
+		9501E1BC2803061900FBDA5E /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501E1BB2803061900FBDA5E /* AppNotification.swift */; };
 		95834CDC280300040034C5C7 /* Notification in Resources */ = {isa = PBXBuildFile; fileRef = 95834CD3280300040034C5C7 /* Notification */; };
 		95834CDD280300040034C5C7 /* Timer in Resources */ = {isa = PBXBuildFile; fileRef = 95834CD4280300040034C5C7 /* Timer */; };
 		95834CDE280300040034C5C7 /* Onboarding in Resources */ = {isa = PBXBuildFile; fileRef = 95834CD5280300040034C5C7 /* Onboarding */; };
@@ -29,6 +30,7 @@
 		3F2E52DA2801899F00CC0CE4 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
 		3F2E52DC280193DA00CC0CE4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3F35A0D42802D66100EB347F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9501E1BB2803061900FBDA5E /* AppNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		95834CD3280300040034C5C7 /* Notification */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Notification; sourceTree = "<group>"; };
 		95834CD4280300040034C5C7 /* Timer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Timer; sourceTree = "<group>"; };
 		95834CD5280300040034C5C7 /* Onboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Onboarding; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				3F2E52DA2801899F00CC0CE4 /* SystemData.swift */,
 				95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */,
 				95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */,
+				9501E1BB2803061900FBDA5E /* AppNotification.swift */,
 				95E48AB727FAA8F9000B4A4C /* Assets.xcassets */,
 				95E48AB927FAA8F9000B4A4C /* LaunchScreen.storyboard */,
 				3F2E52DC280193DA00CC0CE4 /* Main.storyboard */,
@@ -177,6 +180,7 @@
 			files = (
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
 				3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */,
+				9501E1BC2803061900FBDA5E /* AppNotification.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
 				3F35A0D52802D66100EB347F /* HomeViewController.swift in Sources */,
 			);
