@@ -1,16 +1,9 @@
-//
-//  SceneDelegate.swift
-//  MC1 Sunpride
-//
-//  Created by Tb. Daffa Amadeo Zhafrana on 04/04/22.
-//
-
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+class SceneDelegate: UIResponder, UIWindowSceneDelegate
+{
     var window: UIWindow?
-
+    let notificationRequestVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationRequestID")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -39,6 +32,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        Task(priority: .high)
+        {
+            let status = await AppNotification.getAuthorizationStatus()
+            let presented = notificationRequestVC.viewIfLoaded?.window != nil
+            if (status == .authorized && presented)
+            {
+                notificationRequestVC.dismiss(animated: true)
+            }
+            else if (status != .authorized && !presented)
+            {
+                notificationRequestVC.modalPresentationStyle = .fullScreen
+                window?.rootViewController?.present(notificationRequestVC, animated: true)
+            }
+        }
+
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
