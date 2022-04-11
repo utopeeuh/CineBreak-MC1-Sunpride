@@ -15,7 +15,7 @@ class PerformanceController: UIViewController
     @IBOutlet weak var avgWatchText: UILabel!
     @IBOutlet weak var overtimeText: UILabel!
     
-    @IBOutlet weak var watchLbl: UILabel!
+    @IBOutlet weak var lastWeekLabel: UILabel!
     
     override func viewDidLoad() {
     }
@@ -27,10 +27,13 @@ class PerformanceController: UIViewController
     private func loadData(){
         calculateStats()
         
-        watchText.text = "Total Watch Time: \(roundDouble(x: totalWatchtime)) minutes"
-        breaksText.text = "Breaks: \(breaksTakenPerHour) per hour"
-        overtimeText.text = "Times Overtime: \(roundDouble(x: timesOvertime)) time(s)"
-        avgWatchText.text = "Average session time: \(avgWatchTime) minutes"
+        watchText.text = "\(roundDouble(x: totalWatchtime)) mins"
+        breaksText.text = "\(breaksTakenPerHour) per hour"
+        overtimeText.text = "\(roundDouble(x: timesOvertime)) time(s)"
+        avgWatchText.text = "\(avgWatchTime) mins"
+        
+        let lastWeekTime = UserPerformance.shared.getLastWeekStat()
+        lastWeekLabel.text = "\(roundDouble(x: lastWeekTime)) minutes"
     }
     
     private func calculateStats(){
