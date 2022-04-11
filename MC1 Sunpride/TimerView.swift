@@ -1,31 +1,25 @@
+//
+//  HomeViewController.swift
+//  MC1 Sunpride
+//
+//  Created by Ramadhan Kalih Sewu on 07/04/22.
+//
+
 import Foundation
 import UIKit
 
 @IBDesignable class TimerView: UIView
 {
-    @IBOutlet var view: UIView!
-    
-    @IBInspectable var initialTime: UInt = 1 { didSet {
-        currentTime = initialTime
-    }}
-    @IBInspectable var fillProgress: Bool = true { didSet {
-        shapeLayer.strokeEnd = fillProgress ? 0 : 1
-    }}
+    var isPlaying: Bool = false
+    var initialTime: Int32 = 2 * 60
+    var currentTime: Int32 = 2 * 60
+    var timer: Timer!
     
     @IBOutlet weak var timerLogo: UIImageView!
     @IBOutlet weak var labelMinute: UILabel!
     @IBOutlet weak var labelSecond: UILabel!
     @IBOutlet weak var buttonTimer: UIButton!
     
-    var currentTime: UInt! { didSet {
-        labelMinute?.text = String(format: "%02d", UInt(currentTime / 60))
-        labelSecond?.text = String(format: "%02d", UInt(currentTime % 60))
-    }}
-    
-    var isPlaying: Bool = false
-    var timer: Timer!
-    var progressionPath: CGPath!
-    var changeStateLock = NSLock()
     let shapeLayer = CAShapeLayer()
     
     override init(frame: CGRect)
@@ -40,106 +34,97 @@ import UIKit
         setup()
     }
     
-    override func prepareForInterfaceBuilder() { setup() }
-    
     func setup()
     {
-        assert(initialTime != 0)
-        currentTime = initialTime
+        let viewFromXib = Bundle.main.loadNibNamed("TimerView", owner: self, options: nil)![0] as! UIView
+        viewFromXib.frame = self.bounds
+        addSubview(viewFromXib)
         
-        let bundle = Bundle(for: TimerView.self)
-        bundle.loadNibNamed(String(describing: TimerView.self), owner: self, options: nil)
-        view.frame = self.bounds
-        addSubview(view)
+        updateLabel()
         
-        // circular progressing bar arc center relative to button
-        let center = CGPoint(
-            x: buttonTimer.frame.midX,
-            y: buttonTimer.frame.midY
-        )
-        // path
-        let circPath = UIBezierPath(
-            arcCenter: center,
-            radius: buttonTimer.frame.width / 1.6,
+        let center = self.center
+        let circularPath = UIBezierPath(
+            arcCenter: CGPoint(x: 140, y: 140),
+            radius: 138,
             startAngle: -CGFloat.pi / 2.0,
             endAngle: CGFloat.pi * 1.5,
             clockwise: true
         )
+        
         // progression layer
-        shapeLayer.path        = circPath.cgPath
-        shapeLayer.strokeColor = UIColor(named: "colorHighlight")?.cgColor
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
         shapeLayer.fillColor   = UIColor.clear.cgColor
         shapeLayer.lineWidth   = 25
+        shapeLayer.strokeEnd   = 0
         shapeLayer.lineCap     = .round
-        shapeLayer.strokeEnd   = fillProgress ? 0 : 1
+        
         // track layer
-        let trackLayer         = CAShapeLayer()
-        trackLayer.path        = circPath.cgPath
-        trackLayer.strokeColor = CGColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1)
+        let trackLayer = CAShapeLayer()
+        
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.darkGray.cgColor
         trackLayer.fillColor   = UIColor.clear.cgColor
         trackLayer.lineWidth   = 25
         trackLayer.lineCap     = .round
-        // add track and progression bar as sublayer
+        
         self.layer.addSublayer(trackLayer)
         self.layer.addSublayer(shapeLayer)
     }
     
     @IBAction func onTimerButton(_ sender: Any)
     {
-        synchronized(changeStateLock)
+        isPlaying = !isPlaying
+        timerLogo.image = UIImage(named: isPlaying ? "stop.fill" : "play.fill")
+        resetAnimation()
+    }
+    
+    private func resetAnimation()
+    {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        if (isPlaying)
         {
-            isPlaying = !isPlaying
-            timerLogo.image = UIImage(named: isPlaying ? "stop.fill" : "play.fill")
-            
-            let animation = CABasicAnimation(keyPath: "strokeEnd")
-            if (isPlaying)
-            {
-                timer = Timer.scheduledTimer(
-                    timeInterval: 1.0,
-                    target: self,
-                    selector: #selector(TimerView.onCountdown),
-                    userInfo: nil,
-                    repeats: true
-                )
-                animation.fromValue = fillProgress ? 0 : 1
-                animation.toValue   = fillProgress ? 1 : 0
-                animation.duration  = Double(initialTime)
-                animation.fillMode  = .forwards
-            }
-            else
-            {
-                timer.invalidate()
-                shapeLayer.removeAllAnimations()
-                animation.fromValue = fillProgress ? Double(initialTime - currentTime) / Double(initialTime) : Double(currentTime) / Double(initialTime)
-                animation.toValue   = fillProgress ? 0 : 1
-                animation.duration  = 0.2
-                animation.fillMode  = .forwards
-                currentTime = initialTime
-            }
-            shapeLayer.add(animation, forKey: "animateStroke")
+            timer = Timer.scheduledTimer(
+                timeInterval: 1.0,
+                target: self,
+                selector: #selector(TimerView.onCountdown),
+                userInfo: nil,
+                repeats: true
+            )
+            animation.fromValue = 0
+            animation.toValue   = 1
+            animation.duration  = Double(initialTime)
+            animation.fillMode  = CAMediaTimingFillMode.both
         }
+        else
+        {
+            timer.invalidate()
+            animation.fromValue = Double(initialTime - currentTime) / Double(initialTime)
+            animation.toValue   = 0
+            animation.duration  = Double(initialTime - currentTime) / Double(initialTime)
+            animation.fillMode  = CAMediaTimingFillMode.backwards
+            currentTime = initialTime
+            updateLabel()
+        }
+        shapeLayer.add(animation, forKey: "animateStroke")
     }
     
     @objc func onCountdown()
     {
-        synchronized(changeStateLock)
+        currentTime -= 1
+        updateLabel()
+        if (currentTime == 0)
         {
-            currentTime -= 1
-            if (currentTime == 0)
-            {
-                isPlaying = false
-                currentTime = initialTime
-                timerLogo.image = UIImage(named: "play.fill")
-                timer.invalidate()
-            }
+            currentTime = initialTime
+            timer.invalidate()
+            resetAnimation()
         }
     }
     
-    /// imitates synchronized block in java for multi-thread environment, prevent race condition
-    func synchronized(_ lock: Any, closure: () -> Void)
+    func updateLabel()
     {
-        objc_sync_enter(lock)
-        closure()
-        objc_sync_exit(lock)
+        labelMinute.text = String(format: "%02d", Int(currentTime / 60))
+        labelSecond.text = String(format: "%02d", Int(currentTime % 60))
     }
 }
