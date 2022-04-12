@@ -105,6 +105,7 @@ import UIKit
                 animation.toValue   = fillProgress ? 1 : 0
                 animation.duration  = Double(initialTime)
                 animation.fillMode  = .forwards
+                animation.isRemovedOnCompletion = false
             }
             else
             {
@@ -128,8 +129,6 @@ import UIKit
             if (currentTime == 0)
             {
                 isPlaying = false
-                currentTime = initialTime
-                timerLogo.image = UIImage(named: "play.fill")
                 timer.invalidate()
             }
         }

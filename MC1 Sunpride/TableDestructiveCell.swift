@@ -3,19 +3,18 @@ import UIKit
 
 class ResetTableViewCell: UITableViewCell
 {
-    static let identifier = "ResetTableViewCell"
-    
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         return label
     }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         contentView.clipsToBounds = true
         accessoryType = .none
-        backgroundColor = UIColor.gray
+        backgroundColor = UIColor.black
     }
     
     required init?(coder: NSCoder){
@@ -38,8 +37,8 @@ class ResetTableViewCell: UITableViewCell
         label.text = nil
     }
     
-    // public func configure(with model: ResetOption){
-    //     label.text = model.title
-    //     label.textColor = UIColor.systemRed
-    // }
+    public func configure(with model: ResetOption){
+        label.text = model.title
+        label.textColor = UIColor.systemRed
+    }
 }
