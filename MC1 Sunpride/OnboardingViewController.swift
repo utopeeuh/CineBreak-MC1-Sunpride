@@ -1,13 +1,8 @@
-//
-//  OnboardingViewController.swift
-//  MC1 Sunpride
-//
-//  Created by Nikita Felicia on 07/04/22.
-//
-
+import Foundation
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController
+{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextBtn: UIButton!
@@ -39,12 +34,21 @@ class OnboardingViewController: UIViewController {
     }
   
     
-    @IBAction func nextBtnClicked(_ sender: UIButton) {
-        if currentPage == slides.count - 1 {
-            let controller = storyboard?.instantiateViewController(identifier: "HomeNC") as! UINavigationController
+    @IBAction func nextBtnClicked(_ sender: UIButton)
+    {
+        if (currentPage == slides.count - 1)
+        {
+            UserSettings.set(.initial, false)
             
-            present(controller, animated: true, completion: nil)
-        } else {
+            let vc = storyboard!.instantiateViewController(identifier: "dashboard")
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+            
+            notificationRequestVC.modalPresentationStyle = .fullScreen
+            vc.present(notificationRequestVC, animated: true)
+        }
+        else
+        {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)

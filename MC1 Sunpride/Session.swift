@@ -57,26 +57,10 @@ func createSession (startTime: Date){
         let startMinute = calendar.component(.minute, from: startTime)
         let finishHour = calendar.component(.hour, from: Date())
         let finishMinute = calendar.component(.minute, from: Date())
-        
-        if startHour < getSleepTimeHour() && startMinute < getSleepTimeMinute() && finishHour > getSleepTimeHour() && finishMinute > getSleepTimeMinute(){
-            isOvertime = true
-        }
             
         let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: isOvertime)
         addSession(newSession: newSession)
     }
     breakCounter = 0
-    
 }
-
-
-
-
-
-
-
-
-
-
-
 

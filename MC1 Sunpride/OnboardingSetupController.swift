@@ -1,16 +1,7 @@
-//
-//  InitialSetupViewController.swift
-//  MC1-Sunpride
-//
-//  Created by Nikita Felicia on 11/04/22.
-//
-
 import UIKit
 
-class OnboardingSetupController: UIViewController {
-    
-    //@IBOutlet weak var setButton: UIButton!
-    
+class OnboardingSetupController: UIViewController
+{
     @IBOutlet weak var setButton1: UIButton!
     
     @IBOutlet weak var setButton2: UIButton!
@@ -216,10 +207,9 @@ class OnboardingSetupController: UIViewController {
     }
     
     func pickNumber(){
-        
+
         pickerView.delegate = self
         pickerView.dataSource = self
-        
             
         durationField.inputView = pickerView
             

@@ -2,6 +2,7 @@ import Foundation
 
 enum SettingsKey
 {
+    case initial                       /// Bool
     case username                      /// String
     case enableVibrate                 /// Bool
     case sleepTime                     /// String
@@ -24,6 +25,7 @@ class UserSettings
         let value = UserDefaults.standard.object(forKey: "\(key)")
         if (value != nil) { return value }
         /// default value for user settings
+        if (key == .initial)                        { return true }
         if (key == .username)                       { return nil }
         if (key == .enableVibrate)                  { return true }
         if (key == .sleepTime)                      { return "22:00" }
