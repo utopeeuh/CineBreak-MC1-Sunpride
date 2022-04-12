@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  MC1 Splash screen
+//  SleepTime2
 //
-//  Created by Nikita Felicia on 07/04/22.
+//  Created by Nikita Felicia on 11/04/22.
 //
 
 import UIKit

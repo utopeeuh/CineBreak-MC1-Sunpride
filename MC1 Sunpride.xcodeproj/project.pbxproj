@@ -12,6 +12,7 @@
 		3F70207C27FE436E00B42640 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70207B27FE436E00B42640 /* SettingsViewController.swift */; };
 		3F70208427FE4F0900B42640 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70208327FE4F0900B42640 /* Theme.swift */; };
 		3F70208627FE9C2A00B42640 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F70208527FE9C2A00B42640 /* TimerView.xib */; };
+		9304EE2E280543290034739D /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304EE2D280543290034739D /* InitialSetupViewController.swift */; };
 		95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */; };
 		95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */; };
 		95E48AB627FAA8F9000B4A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E48AB427FAA8F9000B4A4C /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		3F70207B27FE436E00B42640 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3F70208327FE4F0900B42640 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		3F70208527FE9C2A00B42640 /* TimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
+		9304EE2D280543290034739D /* InitialSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialSetupViewController.swift; sourceTree = "<group>"; };
 		95E48AAB27FAA8F9000B4A4C /* MC1 Sunpride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1 Sunpride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E48AAE27FAA8F9000B4A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E48AB027FAA8F9000B4A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				3F70207927FE435D00B42640 /* StatisticsViewController.swift */,
 				3F70207B27FE436E00B42640 /* SettingsViewController.swift */,
 				3F70208527FE9C2A00B42640 /* TimerView.xib */,
+				9304EE2D280543290034739D /* InitialSetupViewController.swift */,
 			);
 			path = "MC1 Sunpride";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9304EE2E280543290034739D /* InitialSetupViewController.swift in Sources */,
 				95E48AAF27FAA8F9000B4A4C /* AppDelegate.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
 				A1499B2B27FEBD7600388CB5 /* UIView+Extension.swift in Sources */,
