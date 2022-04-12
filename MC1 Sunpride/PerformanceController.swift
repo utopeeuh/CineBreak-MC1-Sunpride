@@ -19,12 +19,9 @@ class PerformanceController: UIViewController
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
-    override func viewDidLoad() {
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
-        print("yo")
     }
     
     private func loadData(){
@@ -47,16 +44,14 @@ class PerformanceController: UIViewController
     }
     
     private func calculateStats(){
-        print(totalWatchtime!)
         if totalWatchtime != 0{
-            print(sessionsDone!)
             avgWatchTime = roundDouble(x:(totalWatchtime / Double(sessionsDone)))
-            breaksTakenPerHour = roundDouble(x:(Double(breaksTaken) / (totalWatchtime/3600)))
+            breaksTakenPerHour = roundDouble(x:( (totalWatchtime/3600)/Double(breaksTaken)))
         }
     }
         
     
     private func roundDouble(x: Double) -> String{
-        return x == 0 ? "0" : String(format: "%.2f", x)
+        return x == 0 || x < 0.1 ? "0" : String(format: "%.1f", x)
     }
 }

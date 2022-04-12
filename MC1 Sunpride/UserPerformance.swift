@@ -44,6 +44,8 @@ class UserPerformance
         breaksTaken += Double(s.breaksTaken)
         sessionsDone += 1
         if s.isOvertime {  timesOvertime += 1  }
+        
+        print("Session: \(sessionsDone)\nAcc. Watch Time: \(totalWatchtime)\nAcc. Breaks Taken: \(breaksTaken)")
     }
     
     private func resetStats(){
@@ -103,7 +105,6 @@ class UserPerformance
         guard let currentWeekOfYear = currentComponents.weekOfYear, let dateWeekOfYear = dateComponents.weekOfYear else { return nil }
         return currentWeekOfYear == dateWeekOfYear
     }
-   
 }
 
 

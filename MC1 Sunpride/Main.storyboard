@@ -13,7 +13,7 @@
         <!--Statistics-->
         <scene sceneID="PtN-1M-PEP">
             <objects>
-                <viewController title="Statistics" id="2Q2-ju-SnJ" customClass="PerformanceController" customModule="MC1_Sunpride" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Q2-ju-SnJ" customClass="PerformanceController" customModule="MC1_Sunpride" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hut-gU-2IQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

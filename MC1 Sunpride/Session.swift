@@ -35,7 +35,7 @@ func addSession(newSession: Session) -> Void
 {
     var sessions = getSessions()
     sessions.append(newSession)
-    print(sessions)
+    print(newSession)
     if let data = try? PropertyListEncoder().encode(sessions) {
             UserDefaults.standard.set(data, forKey: SESSIONS_KEY)
     }
@@ -47,20 +47,28 @@ func addBreakCounter(){
 
 func createSession (startTime: Date){
     let watchTime = Date().timeIntervalSince(startTime)
+    print(watchTime)
     if watchTime > 10 {
-        print(watchTime)
-        var isOvertime = false
-        
-        let calendar = Calendar.current
-        
-        let startHour = calendar.component(.hour, from: startTime)
-        let startMinute = calendar.component(.minute, from: startTime)
-        let finishHour = calendar.component(.hour, from: Date())
-        let finishMinute = calendar.component(.minute, from: Date())
-            
-        let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: isOvertime)
+        let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: checkIfOvertime( startTime))
         addSession(newSession: newSession)
     }
     breakCounter = 0
+}
+
+func checkIfOvertime(_ startTime: Date) -> Bool{
+    let calendar = Calendar.current
+    
+    let startHour = calendar.component(.hour, from: startTime)
+    let startMinute = calendar.component(.minute, from: startTime)
+    let finishHour = calendar.component(.hour, from: Date())
+    let finishMinute = calendar.component(.minute, from: Date())
+    
+    
+    if startHour < UserSettings.getSleepTimeHour() && startMinute < UserSettings.getSleepTimeMinute() &&
+        finishHour > UserSettings.getSleepTimeHour() && finishMinute > UserSettings.getSleepTimeMinute(){
+        return true
+    }
+    
+    return false
 }
 

@@ -36,4 +36,17 @@ class UserSettings
         if (key == .enablePassBedtimeNotification)  { return true }
         return nil
     }
+    
+    public static func getSleepTimeHour() -> Int{
+        let sleepTime = String(describing: UserSettings.get(.sleepTime))
+        let hour = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 10)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 11)])
+        print(hour)
+        return Int(hour)!
+    }
+
+    public static func getSleepTimeMinute() -> Int{
+        let sleepTime = String(describing: UserSettings.get(.sleepTime))
+        let minute = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 13)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 14)])
+        return Int(minute)!
+    }
 }

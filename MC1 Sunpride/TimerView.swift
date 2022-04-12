@@ -26,6 +26,7 @@ var sharedStartSessionTime: Date? = nil
         currentTime = Double(normalized)
     }}
     
+    var timerPressedTime: Date!
     var isPlaying: Bool  = false
     var startTime: Date!
     var timer: Timer!
@@ -90,6 +91,10 @@ var sharedStartSessionTime: Date? = nil
     
     @IBAction func onTimerButton(_ sender: Any)
     {
+        if timerPressedTime == nil {
+            timerPressedTime = Date()
+        }
+        
         AppNotification.resetBreakNotification()
         
         let startTimerRoutine: () -> Void = { [self] in
@@ -127,8 +132,9 @@ var sharedStartSessionTime: Date? = nil
                     stopTimer()
                     sharedStartSessionTime = nil
                     // Input session data
-                    createSession(startTime: startTime)
+                    createSession(startTime: timerPressedTime)
                     UserPerformance.shared.updateWeeklyStats()
+                    timerPressedTime = nil
                 }
             }}
         }
