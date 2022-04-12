@@ -146,7 +146,6 @@ var sharedStartSessionTime: Date? = nil
         currentTime = Double(initialTime)
         timer?.invalidate()
     }
-var sharedStartTime: Date? = nil
     
     public func startTimer()
     {
@@ -177,8 +176,15 @@ var sharedStartTime: Date? = nil
             if (currentTime <= 0)
             {
                 stopTimer()
-                AppNotification.onGuideMeAction()
-                timer.invalidate()
+                DispatchQueue.main.async
+                    { AppNotification.onGuideMeAction() }
+            }
+            else if (UIApplication.shared.applicationState == .background)
+            {
+                let presented = stretchingVC.viewIfLoaded?.window != nil
+                stretchingVC.completionHandler = nil
+                if (presented)
+                    { stretchingVC.dismiss(animated: false) }
             }
         }
     }

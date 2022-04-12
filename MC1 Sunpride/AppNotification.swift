@@ -154,6 +154,13 @@ class AppNotification
     
     static func onIHaveDoneItAction() -> Void
     {
+        if (UIApplication.shared.applicationState != .background)
+        {
+            let presented = stretchingVC.viewIfLoaded?.window != nil
+            stretchingVC.completionHandler = nil
+            if (presented)
+                { stretchingVC.dismiss(animated: true) }
+        }
         onBreakTaken()
     }
     
@@ -187,6 +194,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) -> Void
     {
-        completionHandler(.sound)
+        completionHandler([.sound, .badge, .list])
     }
 }
