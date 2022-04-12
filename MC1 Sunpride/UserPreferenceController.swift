@@ -68,6 +68,13 @@ class UserPreferenceController: UIViewController {
         else {
             numberField.text = nil
         }
+        
+        let date = Date()
+        var calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        print("\(hour):\(minutes):\(seconds)")
     }
     
     @IBAction func saveButton(_ sender: Any) {

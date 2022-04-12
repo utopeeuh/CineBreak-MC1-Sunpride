@@ -35,16 +35,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
         Task(priority: .high)
         {
             let status = await AppNotification.getAuthorizationStatus()
-            if (status != .authorized)
+            let presented = notificationRequestVC.viewIfLoaded?.window != nil
+            if (status == .authorized && presented)
+            {
+                notificationRequestVC.dismiss(animated: true)
+            }
+            else if (status != .authorized && !presented)
             {
                 notificationRequestVC.modalPresentationStyle = .fullScreen
                 window?.rootViewController?.present(notificationRequestVC, animated: true)
             }
-            else
-            {
-                notificationRequestVC.dismiss(animated: true)
-            }
         }
+
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {

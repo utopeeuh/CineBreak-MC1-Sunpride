@@ -3,17 +3,58 @@ import UserNotifications
 import UIKit
 
 /** identifier for push notification, different id for seperate banner notification, otherwise it will replace the previous */
-enum NotificationId: String, CaseIterable
+enum NotificationKind: String
 {
-    case Break = "break"
+    case breaktime = "Break Routine"
+    case overtime  = "Overtime Reminder"
+    case bedtime   = "Getting Ready for Bed"
 }
 
-/** a time in minutes that indicate the interval for push notification */
+enum MessageIntensity
+{
+    case soft
+    case normal
+    case strong
+}
+
+/** a time in seconds that indicate the interval for push notification */
 enum BreakNotificationStep: TimeInterval, CaseIterable
 {
     case _1 = 30
     case _2 = 40
     case _3 = 45
+}
+
+func getNotificationMessage(_ kind: NotificationKind, _ intensity: MessageIntensity, _ name: String?) -> String
+{
+    if (kind == .breaktime)
+    {
+        if (intensity == .soft)
+            { return "" }
+        if (intensity == .normal)
+            { return "" }
+        if (intensity == .strong)
+            { return "" }
+    }
+    else if (kind == .overtime)
+    {
+        if (intensity == .soft)
+            { return "" }
+        if (intensity == .normal)
+            { return "" }
+        if (intensity == .strong)
+            { return "" }
+    }
+    else if (kind == .bedtime)
+    {
+        if (intensity == .soft)
+            { return "" }
+        if (intensity == .normal)
+            { return "" }
+        if (intensity == .strong)
+            { return "" }
+    }
+    return ""
 }
 
 let BREAK_NOTIFICATION_ACTION_CALLBACK: [(title: String, options: UNNotificationActionOptions, callback: () -> Void)] = [
@@ -51,7 +92,7 @@ class AppNotification
         }
         
         let breakCategory = UNNotificationCategory(
-            identifier: NotificationId.Break.rawValue,
+            identifier: NotificationKind.breaktime.rawValue,
             actions: breakActions,
             intentIdentifiers: [],
             options: []
@@ -63,17 +104,23 @@ class AppNotification
     
     private static func registerBreakNotification() -> Void
     {
-        let notificationContent                = UNMutableNotificationContent()
-        notificationContent.title              = "Break Time"
-        notificationContent.body               = "Write your message here!"
-        notificationContent.badge              = NSNumber(value: 3)
-        notificationContent.sound              = .default
-        notificationContent.categoryIdentifier = NotificationId.Break.rawValue
+        let message = getNotificationMessage(
+            .breaktime,
+            UserSettings.get(.messageIntensity) as! MessageIntensity,
+            UserSettings.get(.username) as! String?
+        )
+        
+        let notifcontent                = UNMutableNotificationContent()
+        notifcontent.title              = NotificationKind.breaktime.rawValue
+        notifcontent.badge              = NSNumber(value: 3)
+        notifcontent.sound              = .default
+        notifcontent.categoryIdentifier = NotificationKind.breaktime.rawValue
+        notifcontent.body               = message
         
         for step in BreakNotificationStep.allCases
         {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: step.rawValue, repeats: false)
-            let request = UNNotificationRequest(identifier: "\(step)", content: notificationContent, trigger: trigger)
+            let request = UNNotificationRequest(identifier: "\(step)", content: notifcontent, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
         }
     }
@@ -108,8 +155,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate
       withCompletionHandler completionHandler: @escaping () -> Void
     ) -> Void
     {
-        let idx: Int? = Int(response.actionIdentifier)
-        BREAK_NOTIFICATION_ACTION_CALLBACK[idx!].callback()
-        completionHandler()
+        if let idx = Int(response.actionIdentifier)
+        {
+            BREAK_NOTIFICATION_ACTION_CALLBACK[idx].callback()
+            completionHandler()
+        }
     }
 }

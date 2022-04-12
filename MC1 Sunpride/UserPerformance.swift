@@ -51,7 +51,7 @@ class UserPerformance
     
     private func update(s: Session){
         totalWatchtime += s.watchTime
-        breaksTaken += s.breaksTaken
+        breaksTaken += Double(s.breaksTaken)
         sessionsDone += 1
         if s.isOvertime {  timesOvertime += 1  }
     }
@@ -73,34 +73,38 @@ class UserPerformance
             defaults.setValue(newValue, forKey: TOTAL_WATCHTIME_KEY)
         }
         get {
+            initStats()
             return defaults.double(forKey: TOTAL_WATCHTIME_KEY)
         }
     }
     
-    var breaksTaken : Int {
+    var breaksTaken : Double {
         set {
             defaults.setValue(newValue, forKey: BREAKS_TAKEN_KEY)
         }
         get {
-            return defaults.integer(forKey: BREAKS_TAKEN_KEY)
+            initStats()
+            return defaults.double(forKey: BREAKS_TAKEN_KEY)
         }
     }
     
-    var sessionsDone : Int {
+    var sessionsDone : Double {
         set {
             defaults.setValue(newValue, forKey: SESSIONS_DONE_KEY)
         }
         get {
-            return defaults.integer(forKey: BREAKS_TAKEN_KEY)
+            initStats()
+            return defaults.double(forKey: BREAKS_TAKEN_KEY)
         }
     }
     
-    var timesOvertime : Int {
+    var timesOvertime : Double {
         set {
             defaults.setValue(newValue, forKey: TIMES_OVERTIME_KEY)
         }
         get {
-            return defaults.integer(forKey: TIMES_OVERTIME_KEY)
+            initStats()
+            return defaults.double(forKey: TIMES_OVERTIME_KEY)
         }
     }
     
