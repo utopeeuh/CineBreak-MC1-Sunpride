@@ -230,6 +230,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
                                         <integer key="value" value="60"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-E3-OvS">
@@ -265,6 +266,7 @@
                     <connections>
                         <outlet property="prepBtn" destination="8wP-E3-OvS" id="oKl-rw-6Xq"/>
                         <outlet property="stretchBtn" destination="gea-Fk-KuQ" id="nbe-J4-xqL"/>
+                        <outlet property="timerView" destination="Lpf-Zt-mZv" id="tD3-Ke-DBk"/>
                         <segue destination="VYZ-eb-YqA" kind="presentation" identifier="setupModal" id="Q2J-bb-az9"/>
                         <segue destination="JUt-t2-2TL" kind="presentation" identifier="stretchingModal" id="feg-ea-W9Q"/>
                     </connections>

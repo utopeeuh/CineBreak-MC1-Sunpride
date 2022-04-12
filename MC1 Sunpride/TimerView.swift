@@ -1,12 +1,15 @@
 import Foundation
 import UIKit
 
+var sharedStartTime: Date? = nil
+var sharedStartSessionTime: Date? = nil
+
 @IBDesignable class TimerView: UIView
 {
     @IBOutlet var view: UIView!
     
     @IBInspectable var initialTime: UInt = 1 { didSet {
-        currentTime = initialTime
+        currentTime = Double(initialTime)
     }}
     @IBInspectable var fillProgress: Bool = true { didSet {
         shapeLayer.strokeEnd = fillProgress ? 0 : 1
@@ -17,18 +20,17 @@ import UIKit
     @IBOutlet weak var labelSecond: UILabel!
     @IBOutlet weak var buttonTimer: UIButton!
     
-    var currentTime: UInt! { didSet {
-        labelMinute?.text = String(format: "%02d", UInt(currentTime / 60))
-        labelSecond?.text = String(format: "%02d", UInt(currentTime % 60))
+    var currentTime: Double! { didSet {
+        labelMinute?.text = String(format: "%02d", UInt(currentTime) / 60)
+        labelSecond?.text = String(format: "%02d", UInt(currentTime) % 60)
     }}
     
-    var isPlaying: Bool = false
+    var isPlaying: Bool  = false
+    var startTime: Date!
     var timer: Timer!
     var progressionPath: CGPath!
     var changeStateLock = NSLock()
     let shapeLayer = CAShapeLayer()
-    
-    var startTime: Date!
 
     override init(frame: CGRect)
     {
@@ -47,7 +49,6 @@ import UIKit
     func setup()
     {
         assert(initialTime != 0)
-        currentTime = initialTime
         
         let bundle = Bundle(for: TimerView.self)
         bundle.loadNibNamed(String(describing: TimerView.self), owner: self, options: nil)
@@ -88,64 +89,97 @@ import UIKit
     
     @IBAction func onTimerButton(_ sender: Any)
     {
-        synchronized(changeStateLock)
-        {
-            isPlaying = !isPlaying
-            timerLogo.image = UIImage(named: isPlaying ? "stop.fill" : "play.fill")
-            
-            let animation = CABasicAnimation(keyPath: "strokeEnd")
-            if (isPlaying)
-            {
-                timer = Timer.scheduledTimer(
-                    timeInterval: 1.0,
-                    target: self,
-                    selector: #selector(TimerView.onCountdown),
-                    userInfo: nil,
-                    repeats: true
-                )
-                animation.fromValue = fillProgress ? 0 : 1
-                animation.toValue   = fillProgress ? 1 : 0
-                animation.duration  = Double(initialTime)
-                animation.fillMode  = .forwards
-                animation.isRemovedOnCompletion = false
-                startTime = Date()
-            }
-            else
-            {
-                timer.invalidate()
-                shapeLayer.removeAllAnimations()
-                animation.fromValue = fillProgress ? Double(initialTime - currentTime) / Double(initialTime) : Double(currentTime) / Double(initialTime)
-                animation.toValue   = fillProgress ? 0 : 1
-                animation.duration  = 0.2
-                animation.fillMode  = .forwards
-                currentTime = initialTime
-                
-                // Input session data
-                createSession(startTime: startTime)
-                UserPerformance.shared.updateWeeklyStats()
-            }
-            shapeLayer.add(animation, forKey: "animateStroke")
+        AppNotification.resetBreakNotification()
+        
+        let startTimerRoutine: () -> Void = { [self] in
+            startTimer()
+            sharedStartTime = startTime
+            sharedStartSessionTime = startTime
+            AppNotification.sendNotification()
         }
+        
+        Task(priority: .high)
+        {
+            let status = await AppNotification.getAuthorizationStatus()
+            let presented = notificationRequestVC.viewIfLoaded?.window != nil
+            if (status != .authorized && !presented)
+            {
+                notificationRequestVC.modalPresentationStyle = .fullScreen
+                let vc = UIApplication.shared.topMostViewController()
+                vc?.present(notificationRequestVC, animated: true)
+            }
+            else { synchronized(changeStateLock)
+            {
+                isPlaying = !isPlaying
+                timerLogo.image = UIImage(named: isPlaying ? "stop.fill" : "play.fill")
+                if (isPlaying)
+                {
+                    setupVC.completionHandler = startTimerRoutine
+                    let presented = setupVC.viewIfLoaded?.window != nil
+                    if (!presented)
+                    {
+                        let vc = UIApplication.shared.topMostViewController()
+                        vc?.present(setupVC, animated: true)
+                    }
+                }
+                else
+                {
+                    stopTimer()
+                    sharedStartTime = nil
+                    sharedStartSessionTime = nil
+                    // Input session data
+                    createSession(startTime: startTime)
+                    UserPerformance.shared.updateWeeklyStats()
+                }
+            }}
+        }
+    }
+    
+    public func stopTimer()
+    {
+        timer?.invalidate()
+        shapeLayer.removeAllAnimations()
+        currentTime = Double(initialTime)
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = fillProgress ? Date().timeIntervalSince(startTime) / Double(initialTime) : currentTime / Double(initialTime)
+        animation.toValue   = fillProgress ? 0 : 1
+        animation.duration  = 0.2
+        animation.fillMode  = .forwards
+        shapeLayer.add(animation, forKey: "animateStroke")
+    }
+    
+    public func startTimer()
+    {
+        startTime = Date()
+        currentTime = Double(initialTime - 1)
+        
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(TimerView.onCountdown),
+            userInfo: nil,
+            repeats: true
+        )
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = fillProgress ? 0 : 1
+        animation.toValue   = fillProgress ? 1 : 0
+        animation.duration  = Double(initialTime)
+        animation.fillMode  = .forwards
+        animation.isRemovedOnCompletion = false
+        shapeLayer.add(animation, forKey: "animateStroke")
     }
     
     @objc func onCountdown()
     {
         synchronized(changeStateLock)
         {
-            currentTime -= 1
-            if (currentTime == 0)
+            currentTime = Double(initialTime) + startTime.timeIntervalSinceNow
+            if (currentTime <= 0)
             {
                 timer.invalidate()
+                AppNotification.onGuideMeAction()
             }
-            print("counting")
         }
-    }
-    
-    /// imitates synchronized block in java for multi-thread environment, prevent race condition
-    func synchronized(_ lock: Any, closure: () -> Void)
-    {
-        objc_sync_enter(lock)
-        closure()
-        objc_sync_exit(lock)
     }
 }

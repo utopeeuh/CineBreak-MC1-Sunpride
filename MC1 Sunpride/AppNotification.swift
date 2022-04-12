@@ -134,23 +134,39 @@ class AppNotification
         }
     }
     
-    static func onGuideMeAction() -> Void
+    public static func isBreakTime(_ startTime: Date, _ step: BreakNotificationStep = ._1) -> Bool
     {
-        resetBreakNotification()
-        registerBreakNotification()
-        addBreakCounter()
+        return Date().timeIntervalSince(startTime) >= step.rawValue
+    }
+    
+    public static func onGuideMeAction() -> Void
+    {
+        let presented = stretchingVC.viewIfLoaded?.window != nil
+        stretchingVC.completionHandler = onBreakTaken
+        if (!presented)
+        {
+            let vc = UIApplication.shared.topMostViewController()
+            vc?.present(stretchingVC, animated: true)
+        }
     }
     
     static func onIHaveDoneItAction() -> Void
     {
+        onBreakTaken()
+    }
+    
+    static func onBreakTaken() -> Void
+    {
+        addBreakCounter()
         resetBreakNotification()
         registerBreakNotification()
-        addBreakCounter()
+        print("onBreakTaken")
     }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate
 {
+    // did receive push notification from background
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       didReceive response: UNNotificationResponse,
@@ -158,9 +174,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate
     ) -> Void
     {
         if let idx = Int(response.actionIdentifier)
-        {
-            BREAK_NOTIFICATION_ACTION_CALLBACK[idx].callback()
-            completionHandler()
-        }
+            { BREAK_NOTIFICATION_ACTION_CALLBACK[idx].callback() }
+        completionHandler()
+    }
+    
+    // received push notifications while in foreground
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) -> Void
+    {
+        completionHandler(.sound)
     }
 }

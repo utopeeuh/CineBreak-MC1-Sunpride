@@ -1,6 +1,8 @@
 import Foundation
 import UIKit
 
+let notificationRequestVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationRequestID")
+
 class NotificationRequestViewController: UIViewController
 {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
