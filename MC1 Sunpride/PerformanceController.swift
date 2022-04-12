@@ -17,6 +17,8 @@ class PerformanceController: UIViewController
     
     @IBOutlet weak var lastWeekLabel: UILabel!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
     override func viewDidLoad() {
     }
     

@@ -24,7 +24,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Finish">
                                     <color key="baseForegroundColor" name="blackColor"/>
-                                    <color key="baseBackgroundColor" name="colorHighlight"/>
+                                    <color key="baseBackgroundColor" name="highlightColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="dismissModal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AQt-re-rPM"/>
@@ -120,7 +120,7 @@
         <namedColor name="blackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="colorHighlight">
+        <namedColor name="highlightColor">
             <color red="0.98000001907348633" green="0.77999997138977051" blue="0.063000001013278961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
