@@ -64,6 +64,8 @@ let BREAK_NOTIFICATION_ACTION_CALLBACK: [(title: String, options: UNNotification
 
 class AppNotification
 {
+    public static var onBreakTakenHandler: (() -> Void)? = nil
+    
     private init() {}
     
     public static func requestAuthorization(completionHandler: @escaping (Bool, Error?) -> Void) -> Void
@@ -160,7 +162,7 @@ class AppNotification
         addBreakCounter()
         resetBreakNotification()
         registerBreakNotification()
-        print("onBreakTaken")
+        onBreakTakenHandler?()
     }
 }
 

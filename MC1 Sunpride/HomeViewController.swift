@@ -12,6 +12,8 @@ class HomeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        AppNotification.onBreakTakenHandler = self.onBreakTakenHandler
+        timerView.initialTime = UInt(BreakNotificationStep.allCases[0].rawValue)
         prepBtn.semanticContentAttribute = .forceRightToLeft
         stretchBtn.semanticContentAttribute = .forceRightToLeft
     }
@@ -36,5 +38,10 @@ class HomeViewController: UIViewController
             let vc = UIApplication.shared.topMostViewController()
             vc?.present(stretchingVC, animated: true)
         }
+    }
+    
+    func onBreakTakenHandler() -> Void
+    {
+        timerView.startTimer()
     }
 }

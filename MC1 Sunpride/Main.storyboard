@@ -228,7 +228,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
-                                        <integer key="value" value="60"/>
+                                        <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="NO"/>
                                 </userDefinedRuntimeAttributes>

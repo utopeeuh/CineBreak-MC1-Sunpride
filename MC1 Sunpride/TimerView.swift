@@ -21,8 +21,10 @@ var sharedStartSessionTime: Date? = nil
     @IBOutlet weak var buttonTimer: UIButton!
     
     var currentTime: Double! { didSet {
-        labelMinute?.text = String(format: "%02d", UInt(currentTime) / 60)
-        labelSecond?.text = String(format: "%02d", UInt(currentTime) % 60)
+        let normalized = currentTime < 0 ? 0 : UInt(currentTime)
+        labelMinute?.text = String(format: "%02d", normalized / 60)
+        labelSecond?.text = String(format: "%02d", normalized % 60)
+        currentTime = Double(normalized)
     }}
     
     var isPlaying: Bool  = false
@@ -137,21 +139,21 @@ var sharedStartSessionTime: Date? = nil
     
     public func stopTimer()
     {
-        timer?.invalidate()
-        shapeLayer.removeAllAnimations()
-        currentTime = Double(initialTime)
-        
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = fillProgress ? Date().timeIntervalSince(startTime) / Double(initialTime) : currentTime / Double(initialTime)
         animation.toValue   = fillProgress ? 0 : 1
         animation.duration  = 0.2
         animation.fillMode  = .forwards
         shapeLayer.add(animation, forKey: "animateStroke")
+        
+        currentTime = Double(initialTime)
+        timer?.invalidate()
     }
     
     public func startTimer()
     {
         startTime = Date()
+        sharedStartTime = startTime
         currentTime = Double(initialTime - 1)
         
         timer = Timer.scheduledTimer(
@@ -177,8 +179,8 @@ var sharedStartSessionTime: Date? = nil
             currentTime = Double(initialTime) + startTime.timeIntervalSinceNow
             if (currentTime <= 0)
             {
+                stopTimer()
                 timer.invalidate()
-                AppNotification.onGuideMeAction()
             }
         }
     }
