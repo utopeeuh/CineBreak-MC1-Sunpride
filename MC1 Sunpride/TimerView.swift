@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-var sharedStartTime: Date? = nil
 var sharedStartSessionTime: Date? = nil
 
 @IBDesignable class TimerView: UIView
@@ -95,7 +94,6 @@ var sharedStartSessionTime: Date? = nil
         
         let startTimerRoutine: () -> Void = { [self] in
             startTimer()
-            sharedStartTime = startTime
             sharedStartSessionTime = startTime
             AppNotification.sendNotification()
         }
@@ -127,7 +125,6 @@ var sharedStartSessionTime: Date? = nil
                 else
                 {
                     stopTimer()
-                    sharedStartTime = nil
                     sharedStartSessionTime = nil
                     // Input session data
                     createSession(startTime: startTime)
@@ -149,11 +146,11 @@ var sharedStartSessionTime: Date? = nil
         currentTime = Double(initialTime)
         timer?.invalidate()
     }
+var sharedStartTime: Date? = nil
     
     public func startTimer()
     {
         startTime = Date()
-        sharedStartTime = startTime
         currentTime = Double(initialTime - 1)
         
         timer = Timer.scheduledTimer(
@@ -180,6 +177,7 @@ var sharedStartSessionTime: Date? = nil
             if (currentTime <= 0)
             {
                 stopTimer()
+                AppNotification.onGuideMeAction()
                 timer.invalidate()
             }
         }
