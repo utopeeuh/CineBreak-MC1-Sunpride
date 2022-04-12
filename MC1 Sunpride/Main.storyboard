@@ -230,6 +230,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-E3-OvS">
@@ -311,50 +312,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZY-S5-IDU">
-                                <rect key="frame" x="95" y="747" width="200" height="31"/>
+                                <rect key="frame" x="32" y="747" width="326" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Not Now">
-                                    <color key="baseForegroundColor" name="colorHighlight"/>
+                                    <color key="baseForegroundColor" name="highlightColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onNotNowButton:" destination="9Vy-a9-YyW" eventType="touchUpInside" id="Q5a-0q-MPf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-St-qFs">
-                                <rect key="frame" x="16" y="694" width="358" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qig-Yd-z9C">
+                                <rect key="frame" x="32" y="534.66666666666663" width="326" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before we go any further, please allow us to send notifications in order to unlock the full features of our app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-3B-hmf">
+                                <rect key="frame" x="32" y="579.66666666666663" width="326" height="50.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-St-qFs">
+                                <rect key="frame" x="32" y="700" width="326" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="RFV-k1-HGZ"/>
+                                    <constraint firstAttribute="height" constant="38" id="mXa-Om-SnB"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Give Permission">
                                     <color key="baseForegroundColor" name="blackColor"/>
-                                    <color key="baseBackgroundColor" name="colorHighlight"/>
+                                    <color key="baseBackgroundColor" name="highlightColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onGivePermissionButton:" destination="9Vy-a9-YyW" eventType="touchUpInside" id="oEL-X9-l0k"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="notification-request-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ybm-3p-uY9">
+                                <rect key="frame" x="32" y="76.000000000000028" width="326" height="426.66666666666674"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8r-dp-npd"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="uZY-S5-IDU" secondAttribute="trailing" constant="95" id="NWt-Ic-meM"/>
-                            <constraint firstItem="uZY-S5-IDU" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="95" id="R5a-37-KE6"/>
-                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="Ra2-St-qFs" secondAttribute="trailing" constant="16" id="dWC-jQ-PwD"/>
-                            <constraint firstItem="d8r-dp-npd" firstAttribute="bottom" secondItem="uZY-S5-IDU" secondAttribute="bottom" constant="32" id="eay-ih-3Gq"/>
-                            <constraint firstItem="Ra2-St-qFs" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="16" id="hro-ec-XoT"/>
-                            <constraint firstItem="uZY-S5-IDU" firstAttribute="top" secondItem="Ra2-St-qFs" secondAttribute="bottom" constant="12" id="v7w-M6-edx"/>
+                            <constraint firstItem="Ybm-3p-uY9" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="32" id="5v7-5P-8eN"/>
+                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="Qig-Yd-z9C" secondAttribute="trailing" constant="32" id="6b5-xk-xi1"/>
+                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="uZY-S5-IDU" secondAttribute="trailing" constant="32" id="AOy-rH-7Q5"/>
+                            <constraint firstItem="Ra2-St-qFs" firstAttribute="top" secondItem="5wE-3B-hmf" secondAttribute="bottom" constant="70.000000000000114" id="DDx-DW-UsK"/>
+                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="Ybm-3p-uY9" secondAttribute="trailing" constant="32" id="G95-Qw-7nu"/>
+                            <constraint firstItem="Qig-Yd-z9C" firstAttribute="top" secondItem="Ybm-3p-uY9" secondAttribute="bottom" constant="32" id="GuI-Qd-hFi"/>
+                            <constraint firstItem="5wE-3B-hmf" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="32" id="Hpw-Wn-YKn"/>
+                            <constraint firstItem="d8r-dp-npd" firstAttribute="bottom" secondItem="uZY-S5-IDU" secondAttribute="bottom" constant="32" id="Nch-iv-hU7"/>
+                            <constraint firstItem="Ybm-3p-uY9" firstAttribute="top" secondItem="d8r-dp-npd" secondAttribute="top" constant="32" id="OXh-Nt-K1k"/>
+                            <constraint firstItem="Ra2-St-qFs" firstAttribute="trailing" secondItem="uZY-S5-IDU" secondAttribute="trailing" id="ccw-gS-yE4"/>
+                            <constraint firstItem="Qig-Yd-z9C" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="32" id="eGf-0g-QZQ"/>
+                            <constraint firstItem="uZY-S5-IDU" firstAttribute="top" secondItem="Ra2-St-qFs" secondAttribute="bottom" constant="9" id="fTe-bh-n6v"/>
+                            <constraint firstItem="d8r-dp-npd" firstAttribute="trailing" secondItem="5wE-3B-hmf" secondAttribute="trailing" constant="32" id="mkg-8i-K0O"/>
+                            <constraint firstItem="5wE-3B-hmf" firstAttribute="top" secondItem="Qig-Yd-z9C" secondAttribute="bottom" constant="16" id="uPP-BX-bAV"/>
+                            <constraint firstItem="uZY-S5-IDU" firstAttribute="leading" secondItem="d8r-dp-npd" secondAttribute="leading" constant="32" id="umE-kb-BrL"/>
+                            <constraint firstItem="Ra2-St-qFs" firstAttribute="leading" secondItem="uZY-S5-IDU" secondAttribute="leading" id="uoj-7J-111"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIO-in-4b5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495.38461538461536" y="-327.01421800947867"/>
+            <point key="canvasLocation" x="-298.46153846153845" y="-327.01421800947867"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lc9-cL-gZh">
             <objects>
-                <viewController title="Settings" id="vxZ-Ej-fX5" sceneMemberID="viewController">
+                <viewController title="Settings" id="vxZ-Ej-fX5" customClass="SettingsViewController" customModule="MC1_Sunpride" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BBu-3g-ZoW">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,11 +391,21 @@
                                 <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-rP-ct3" customClass="SettingsTableView" customModule="MC1_Sunpride" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="390" height="625"/>
+                                <color key="backgroundColor" name="bgViewColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="57" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="42C-K1-AUp"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="42C-K1-AUp" firstAttribute="trailing" secondItem="hVN-rP-ct3" secondAttribute="trailing" id="2ke-gX-xPM"/>
                             <constraint firstItem="BuU-pv-PJt" firstAttribute="leading" secondItem="42C-K1-AUp" secondAttribute="leading" constant="30" id="4lo-dH-u4Q"/>
+                            <constraint firstItem="hVN-rP-ct3" firstAttribute="leading" secondItem="42C-K1-AUp" secondAttribute="leading" id="DYv-uX-Mz0"/>
+                            <constraint firstItem="42C-K1-AUp" firstAttribute="bottom" secondItem="hVN-rP-ct3" secondAttribute="bottom" id="eMp-yM-DqJ"/>
+                            <constraint firstItem="hVN-rP-ct3" firstAttribute="top" secondItem="BuU-pv-PJt" secondAttribute="bottom" constant="32" id="rO5-KW-VEO"/>
                             <constraint firstItem="BuU-pv-PJt" firstAttribute="top" secondItem="42C-K1-AUp" secondAttribute="top" constant="30" id="xFV-e7-5bN"/>
                         </constraints>
                     </view>
@@ -399,9 +435,13 @@
         <image name="gearshape.fill" width="11" height="11"/>
         <image name="house" width="12" height="11"/>
         <image name="house.fill" width="12" height="11"/>
+        <image name="notification-request-logo" width="1700" height="1959"/>
         <image name="overtimeSession" width="1000" height="1000"/>
         <image name="totalTime" width="241" height="231"/>
         <namedColor name="BackgroundColor">
+            <color red="0.14900000393390656" green="0.16500000655651093" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgViewColor">
             <color red="0.14900000393390656" green="0.16500000655651093" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="blackColor">
@@ -412,6 +452,9 @@
         </namedColor>
         <namedColor name="greyColor">
             <color red="0.23899999260902405" green="0.24699999392032623" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="highlightColor">
+            <color red="0.98000001907348633" green="0.77999997138977051" blue="0.063000001013278961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
