@@ -28,6 +28,8 @@ import UIKit
     var changeStateLock = NSLock()
     let shapeLayer = CAShapeLayer()
     
+    var startTime: Date!
+
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -106,6 +108,7 @@ import UIKit
                 animation.duration  = Double(initialTime)
                 animation.fillMode  = .forwards
                 animation.isRemovedOnCompletion = false
+                startTime = Date()
             }
             else
             {
@@ -116,6 +119,9 @@ import UIKit
                 animation.duration  = 0.2
                 animation.fillMode  = .forwards
                 currentTime = initialTime
+                
+                // Input session data
+                createSession(startTime: startTime)
             }
             shapeLayer.add(animation, forKey: "animateStroke")
         }
@@ -131,6 +137,7 @@ import UIKit
                 isPlaying = false
                 timer.invalidate()
             }
+            print("counting")
         }
     }
     

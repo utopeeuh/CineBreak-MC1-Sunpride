@@ -40,15 +40,32 @@ func addSession(newSession: Session) -> Void
     }
 }
 
-func addCounter(){
+func addBreakCounter(){
     breakCounter += 1
 }
 
 func createSession (startTime: Date){
     let watchTime = Date().timeIntervalSince(startTime)
-    let isOvertime = watchTime > getWatchTime() ? true : false
-    let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: isOvertime)
-    addSession(newSession: newSession)
+    if watchTime > 60 {
+        
+        var isOvertime = false
+        
+        let calendar = Calendar.current
+        
+        let startHour = calendar.component(.hour, from: startTime)
+        let startMinute = calendar.component(.minute, from: startTime)
+        let finishHour = calendar.component(.hour, from: Date())
+        let finishMinute = calendar.component(.minute, from: Date())
+        
+        if startHour < getSleepTimeHour() && startMinute < getSleepTimeMinute() && finishHour > getSleepTimeHour() && finishMinute > getSleepTimeMinute(){
+            isOvertime = true
+        }
+            
+        let newSession = Session(date: Date(), watchTime: watchTime, breaksTaken: breakCounter, isOvertime: isOvertime)
+        addSession(newSession: newSession)
+    }
+    breakCounter = 0
+    
 }
 
 

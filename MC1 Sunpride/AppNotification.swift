@@ -20,8 +20,8 @@ enum MessageIntensity
 /** a time in seconds that indicate the interval for push notification */
 enum BreakNotificationStep: TimeInterval, CaseIterable
 {
-    case _1 = 30
-    case _2 = 40
+    case _1 = 20
+    case _2 = 30
     case _3 = 45
 }
 
@@ -138,12 +138,14 @@ class AppNotification
     {
         resetBreakNotification()
         registerBreakNotification()
+        addBreakCounter()
     }
     
     static func onIHaveDoneItAction() -> Void
     {
         resetBreakNotification()
         registerBreakNotification()
+        addBreakCounter()
     }
 }
 

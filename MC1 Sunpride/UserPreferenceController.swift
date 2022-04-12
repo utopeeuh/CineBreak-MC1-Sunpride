@@ -84,8 +84,28 @@ class UserPreferenceController: UIViewController {
     }
 }
 
+func getSleepTimeHour() -> Int{
+    var hour = UserDefaults.standard.string(forKey: "sleepTime")
+    hour = stringIndex(s: hour!, i: 0)+stringIndex(s: hour!, i: 1)
+    
+    let hourDouble = Int(hour!)
+    return hourDouble!
+}
+
+func getSleepTimeMinute() -> Int{
+    var minute = UserDefaults.standard.string(forKey: "sleepTime")
+    minute = stringIndex(s: minute!, i: 3)+stringIndex(s: minute!, i: 4)
+    
+    let minuteDouble = Int(minute!)
+    return minuteDouble!
+}
+
 func getWatchTime() -> Double {
     return UserDefaults.standard.double(forKey: "watchHour")
+}
+
+func stringIndex(s: String, i: Int) -> String{
+    return String(s[s.index(s.startIndex, offsetBy: i)])
 }
 
 extension UserPreferenceController: UIPickerViewDelegate, UIPickerViewDataSource {
