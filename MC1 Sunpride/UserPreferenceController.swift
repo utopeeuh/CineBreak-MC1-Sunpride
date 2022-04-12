@@ -70,7 +70,7 @@ class UserPreferenceController: UIViewController {
         }
         
         let date = Date()
-        var calendar = Calendar.current
+        let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
@@ -86,6 +86,11 @@ class UserPreferenceController: UIViewController {
 
 func getSleepTimeHour() -> Int{
     var hour = UserDefaults.standard.string(forKey: "sleepTime")
+    if(hour == nil){
+        UserDefaults.standard.set("22:00", forKey: "sleepTime")
+        hour = UserDefaults.standard.string(forKey: "sleepTime")
+    }
+    
     hour = stringIndex(s: hour!, i: 0)+stringIndex(s: hour!, i: 1)
     
     let hourDouble = Int(hour!)

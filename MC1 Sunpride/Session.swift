@@ -35,6 +35,7 @@ func addSession(newSession: Session) -> Void
 {
     var sessions = getSessions()
     sessions.append(newSession)
+    print(sessions)
     if let data = try? PropertyListEncoder().encode(sessions) {
             UserDefaults.standard.set(data, forKey: SESSIONS_KEY)
     }
@@ -46,8 +47,8 @@ func addBreakCounter(){
 
 func createSession (startTime: Date){
     let watchTime = Date().timeIntervalSince(startTime)
-    if watchTime > 60 {
-        
+    if watchTime > 10 {
+        print(watchTime)
         var isOvertime = false
         
         let calendar = Calendar.current

@@ -11,23 +11,13 @@ class UserPerformance
     private let SESSIONS_DONE_KEY = "SESSIONS_DONE_KEY"
     private let TIMES_OVERTIME_KEY = "TIMES_OVERTIME_KEY"
     
-    // function to update last session data to current userdefaults, ran once per post-session
-    func updateStatsAfterSession(){
-        initStats()
-        update(s: getSessions().last!)
-    }
-    
     //retrieve sessions, update userdefaults data from 6 days ago to today, ran everytime app is opened
     func updateWeeklyStats(){
-        if initStats(){
-            return
-        }
-        else{
-            for s in getSessions() {
-                // validate if session is in the past 7 days inc. today
-                if(s.date >= subtractDay(days: 6)){
-                    update(s: s)
-                }
+        resetStats()
+        for s in getSessions() {
+            // validate if session is in the past 7 days inc. today
+            if(s.date >= subtractDay(days: 6)){
+                update(s: s)
             }
         }
     }
@@ -35,7 +25,7 @@ class UserPerformance
     func getLastWeekStat() -> Double{
         var totalTime : Double = 0
         for s in getSessions() {
-            if subtractDay(days: 7)...subtractDay(days: 13) ~= s.date  {
+            if subtractDay(days: 7) <  s.date  && s.date < subtractDay(days: 13){
                 totalTime += s.watchTime
             }
         }
@@ -56,16 +46,11 @@ class UserPerformance
         if s.isOvertime {  timesOvertime += 1  }
     }
     
-    private func initStats() -> Bool{
-        if getSessions().isEmpty{
-            totalWatchtime = 0
-            breaksTaken = 0
-            sessionsDone = 0
-            timesOvertime = 0
-            
-            return true
-        }
-        return false
+    private func resetStats(){
+        totalWatchtime = 0
+        breaksTaken = 0
+        sessionsDone = 0
+        timesOvertime = 0
     }
     
     var totalWatchtime : Double {
@@ -73,7 +58,6 @@ class UserPerformance
             defaults.setValue(newValue, forKey: TOTAL_WATCHTIME_KEY)
         }
         get {
-            initStats()
             return defaults.double(forKey: TOTAL_WATCHTIME_KEY)
         }
     }
@@ -83,7 +67,6 @@ class UserPerformance
             defaults.setValue(newValue, forKey: BREAKS_TAKEN_KEY)
         }
         get {
-            initStats()
             return defaults.double(forKey: BREAKS_TAKEN_KEY)
         }
     }
@@ -93,8 +76,7 @@ class UserPerformance
             defaults.setValue(newValue, forKey: SESSIONS_DONE_KEY)
         }
         get {
-            initStats()
-            return defaults.double(forKey: BREAKS_TAKEN_KEY)
+            return defaults.double(forKey: SESSIONS_DONE_KEY)
         }
     }
     
@@ -103,7 +85,6 @@ class UserPerformance
             defaults.setValue(newValue, forKey: TIMES_OVERTIME_KEY)
         }
         get {
-            initStats()
             return defaults.double(forKey: TIMES_OVERTIME_KEY)
         }
     }

@@ -69,7 +69,7 @@ import UIKit
         )
         // progression layer
         shapeLayer.path        = circPath.cgPath
-        shapeLayer.strokeColor = UIColor(named: "colorHighlight")?.cgColor
+        shapeLayer.strokeColor = UIColor.highlightColor.cgColor
         shapeLayer.fillColor   = UIColor.clear.cgColor
         shapeLayer.lineWidth   = 25
         shapeLayer.lineCap     = .round
@@ -122,6 +122,7 @@ import UIKit
                 
                 // Input session data
                 createSession(startTime: startTime)
+                UserPerformance.shared.updateWeeklyStats()
             }
             shapeLayer.add(animation, forKey: "animateStroke")
         }
@@ -134,7 +135,6 @@ import UIKit
             currentTime -= 1
             if (currentTime == 0)
             {
-                isPlaying = false
                 timer.invalidate()
             }
             print("counting")

@@ -2,13 +2,13 @@ import UIKit
 
 class PerformanceController: UIViewController
 {
+    var totalWatchtime : Double!
+    var breaksTaken : Double!
+    var sessionsDone : Double!
+    var timesOvertime : Double!
+    
     var breaksTakenPerHour : String = "0"
     var avgWatchTime : String = "0"
-    
-    let totalWatchtime = UserPerformance.shared.totalWatchtime/60
-    let breaksTaken = UserPerformance.shared.breaksTaken
-    let sessionsDone = UserPerformance.shared.sessionsDone
-    let timesOvertime = UserPerformance.shared.timesOvertime
     
     @IBOutlet weak var watchText: UILabel!
     @IBOutlet weak var breaksText: UILabel!
@@ -24,9 +24,17 @@ class PerformanceController: UIViewController
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        print("yo")
     }
     
     private func loadData(){
+        UserPerformance.shared.updateWeeklyStats()
+        
+        totalWatchtime = UserPerformance.shared.totalWatchtime/60
+        breaksTaken = UserPerformance.shared.breaksTaken
+        sessionsDone = UserPerformance.shared.sessionsDone
+        timesOvertime = UserPerformance.shared.timesOvertime
+        
         calculateStats()
         
         watchText.text = "\(roundDouble(x: totalWatchtime)) mins"
@@ -39,7 +47,9 @@ class PerformanceController: UIViewController
     }
     
     private func calculateStats(){
+        print(totalWatchtime!)
         if totalWatchtime != 0{
+            print(sessionsDone!)
             avgWatchTime = roundDouble(x:(totalWatchtime / Double(sessionsDone)))
             breaksTakenPerHour = roundDouble(x:(Double(breaksTaken) / (totalWatchtime/3600)))
         }

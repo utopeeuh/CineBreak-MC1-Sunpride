@@ -20,9 +20,9 @@ enum MessageIntensity
 /** a time in seconds that indicate the interval for push notification */
 enum BreakNotificationStep: TimeInterval, CaseIterable
 {
-    case _1 = 20
-    case _2 = 30
-    case _3 = 45
+    case _1 = 10
+    case _2 = 15
+    case _3 = 20
 }
 
 func getNotificationMessage(_ kind: NotificationKind, _ intensity: MessageIntensity, _ name: String?) -> String
