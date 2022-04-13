@@ -33,20 +33,6 @@
                         <action selector="onTimerButton:" destination="-1" eventType="touchUpInside" id="80L-b2-zLb"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-FH-Z43">
-                    <rect key="frame" x="43" y="40" width="55" height="53"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="45"/>
-                    <color key="textColor" red="0.95686274770000002" green="0.78431367870000002" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ph-QE-aIK">
-                    <rect key="frame" x="102" y="40" width="55" height="53"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="45"/>
-                    <color key="textColor" red="0.4087615013" green="0.40505141020000002" blue="0.607809186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" image="rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RxT-t8-J6w">
                     <rect key="frame" x="0.0" y="97" width="200" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -57,7 +43,27 @@
                     <autoresizingMask key="autoresizingMask"/>
                     <color key="tintColor" red="0.95686274770000002" green="0.78431367870000002" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ph-QE-aIK">
+                    <rect key="frame" x="101" y="37" width="56" height="60"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                    <color key="textColor" red="0.4087615013" green="0.40505141020000002" blue="0.607809186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-FH-Z43">
+                    <rect key="frame" x="43" y="37" width="56" height="60"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                    <color key="textColor" red="0.95686274770000002" green="0.78431367870000002" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <constraints>
+                <constraint firstItem="8ph-QE-aIK" firstAttribute="leading" secondItem="2Pr-FH-Z43" secondAttribute="trailing" constant="2" id="A9I-Qb-W0N"/>
+                <constraint firstItem="2Pr-FH-Z43" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="KNi-Wu-gZB"/>
+                <constraint firstItem="2Pr-FH-Z43" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="43" id="TBW-fJ-cGa"/>
+                <constraint firstAttribute="trailing" secondItem="8ph-QE-aIK" secondAttribute="trailing" constant="43" id="a8T-yM-orv"/>
+                <constraint firstItem="8ph-QE-aIK" firstAttribute="leading" secondItem="2Pr-FH-Z43" secondAttribute="trailing" constant="2" id="oBE-Gq-SRG"/>
+                <constraint firstItem="8ph-QE-aIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="wne-nd-9gY"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
