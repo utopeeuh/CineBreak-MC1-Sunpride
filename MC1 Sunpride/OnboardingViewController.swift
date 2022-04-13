@@ -10,15 +10,14 @@ class OnboardingViewController: UIViewController
     
     var arrOfOnboardingImage: [UIImage] = [UIImage(named: "logologo.svg")!]
     var slides: [OnboardingSlide] = []
-    //var slides3: [OnboardingSlide3] = []
     
     var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                nextBtn.setTitle("START", for: .normal)
+                nextBtn.setTitle("Start", for: .normal)
             } else {
-                nextBtn.setTitle("NEXT", for: .normal)
+                nextBtn.setTitle("Next", for: .normal)
             }
         }
     }
