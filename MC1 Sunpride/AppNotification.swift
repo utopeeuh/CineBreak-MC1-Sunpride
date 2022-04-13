@@ -10,11 +10,11 @@ enum NotificationKind: String
     case bedtime   = "Get ready for bed"
 }
 
-enum MessageIntensity
+enum MessageIntensity: Int, CaseIterable
 {
-    case soft
-    case normal
-    case strong
+    case soft   = 0
+    case normal = 1
+    case strong = 2
 }
 
 /** a time in seconds that indicate the interval for push notification */

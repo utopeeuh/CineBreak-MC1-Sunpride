@@ -2,6 +2,8 @@ import UIKit
 
 class OnboardingSetupController: UIViewController
 {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
     @IBOutlet weak var setButton1: UIButton!
     
     @IBOutlet weak var setButton2: UIButton!
@@ -36,9 +38,16 @@ class OnboardingSetupController: UIViewController
         // set user default
     }
     
-    @IBAction func setAction1(_ sender: Any) {
+    @IBAction func setAction1(_ sender: Any)
+    {
         animateOut(desiredView: popupView1)
         animateOut(desiredView: blurView)
+        if (hardButton.isSelected)
+            { UserSettings.set(.messageIntensity, MessageIntensity.strong.rawValue) }
+        if (neutralButton.isSelected)
+            { UserSettings.set(.messageIntensity, MessageIntensity.normal.rawValue) }
+        if (softButton.isSelected)
+            { UserSettings.set(.messageIntensity, MessageIntensity.soft.rawValue) }
     }
     
     // SLEEP TIME
@@ -51,7 +60,7 @@ class OnboardingSetupController: UIViewController
     @IBAction func setAction2(_ sender: Any) {
         animateOut(desiredView: popupView2)
         animateOut(desiredView: blurView)
-        UserDefaults.standard.set(sleepField.text, forKey: "sleepTime")
+        UserSettings.set(.sleepTime, sleepField.text)
     }
     
     
@@ -65,7 +74,7 @@ class OnboardingSetupController: UIViewController
     @IBAction func setAction3(_ sender: Any) {
         animateOut(desiredView: popupView3)
         animateOut(desiredView: blurView)
-        UserDefaults.standard.set(durationField.text, forKey: "watchTime")
+        UserSettings.set(.targetWatchDuration, durationField.text)
     }
    
     @IBAction func hardButtonPressed(_ sender: UIButton) {
@@ -110,6 +119,7 @@ class OnboardingSetupController: UIViewController
     
     @IBOutlet var popupView3: UIView!
     
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +157,23 @@ class OnboardingSetupController: UIViewController
         button3.layer.cornerRadius = 15
         button3.semanticContentAttribute = .forceRightToLeft
         button3aa.layer.cornerRadius = 15
+        
+        durationField.text = UserSettings.get(.targetWatchDuration) as! String?
+        sleepField.text = UserSettings.get(.sleepTime) as! String?
+        nameTextField.text = SystemData.pickNameFromDevice()
+        
+        let idx = UserSettings.get(.messageIntensity) as! Int
+        if (idx == MessageIntensity.soft.rawValue)
+            { changeSelected(sender: softButton, isSelected: true) }
+        if (idx == MessageIntensity.strong.rawValue)
+            { changeSelected(sender: hardButton, isSelected: true) }
+        if (idx == MessageIntensity.normal.rawValue)
+            { changeSelected(sender: neutralButton, isSelected: true) }
+    }
+    
+    @IBAction func onStartButton(_ sender: Any) {
+        self.dismiss(animated: true)
+        UserSettings.set(.initial, false)
     }
     
     func animateIn(desiredView: UIView){
@@ -173,23 +200,25 @@ class OnboardingSetupController: UIViewController
         })
     }
     
-    @objc func dateChange(datePicker: UIDatePicker){
-        
+    @IBAction func onNameChanged(_ sender: UITextField) {
+        UserSettings.set(.username, sender.text)
+    }
+    
+    @objc func dateChange(datePicker: UIDatePicker)
+    {
         sleepField.text = formatDate(Date: datePicker.date)
     }
     
-    func formatDate(Date: Date) -> String{
-        
+    func formatDate(Date: Date) -> String
+    {
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm aa"
+        formatter.dateFormat = "HH:mm"
         return formatter.string(from: Date)
     }
     
     
-    func sleepTab() {
-        
-        let saveTime = UserDefaults.standard.string(forKey: "sleepTime")
-        
+    func sleepTab()
+    {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode =  .time
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
@@ -197,30 +226,13 @@ class OnboardingSetupController: UIViewController
         datePicker.preferredDatePickerStyle = .wheels
         
         sleepField.inputView = datePicker
-        
-        if saveTime != nil {
-            sleepField.text = saveTime
-        }
-        else {
-            sleepField.text = nil
-        }
     }
     
-    func pickNumber(){
-
+    func pickNumber()
+    {
         pickerView.delegate = self
         pickerView.dataSource = self
-            
         durationField.inputView = pickerView
-            
-        let hourPick = UserDefaults.standard.string(forKey: "watchTime")
-            
-        if hourPick != nil {
-            durationField.text = hourPick
-        }
-        else {
-            durationField.text = nil
-        }
     }
 }
 
