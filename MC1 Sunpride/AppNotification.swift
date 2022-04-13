@@ -5,9 +5,9 @@ import UIKit
 /** identifier for push notification, different id for seperate banner notification, otherwise it will replace the previous */
 enum NotificationKind: String
 {
-    case breaktime = "Break Routine"
-    case overtime  = "Overtime Reminder"
-    case bedtime   = "Getting Ready for Bed"
+    case breaktime = "Take a break!"
+    case overtime  = "You're going overtime!"
+    case bedtime   = "Get ready for bed"
 }
 
 enum MessageIntensity
@@ -25,41 +25,55 @@ enum BreakNotificationStep: TimeInterval, CaseIterable
     case _3 = 20
 }
 
+private struct Messages {
+    var breakMessages : [String]
+    var overtimeMessages : [String]
+    var bedtimeMessages : [String]
+}
+
+private var userName = ""
+private let softMessages = Messages(breakMessages: ["Time is up! It's important to take a little break"], overtimeMessages: ["You have completed your daily dose of movie therapy, time to continue your activities", "Remember to do other things other than watching!"], bedtimeMessages: ["Hey, I'd like to remind you that it's time to sleep :)"])
+
+private let normalMessages = Messages(breakMessages: ["Fun fact of the day: Taking a little break won't hurt anyone!"], overtimeMessages: ["\(userName), your time is up! It's time to rest or be more productive!", "Hey \(userName), don't you have anything else to do?"], bedtimeMessages: ["It's sleep time. You can continue later after enough rest :)", "Knock knock. Who's there? Sleepy. Sleepy who? Sleepy you."])
+
+private let strongMessages = Messages(breakMessages: ["Fun fact: People who don't take breaks develop back pains!", "Feel like wearing thicker glasses? Take a break!", "Back pain incoming!!!"], overtimeMessages: ["Forgetting other things? Guess you're just lazy and old"], bedtimeMessages: ["For the love of God, stop and go to sleep! You have enough problems for tomorrow!", "I see a person who doesn't care enough about their sleep", "I guess sleep deprivation is a trend now!"])
+
 func getNotificationMessage(_ kind: NotificationKind, _ intensity: MessageIntensity, _ name: String?) -> String
 {
+    userName = name ?? "User"
     if (kind == .breaktime)
     {
         if (intensity == .soft)
-            { return "" }
+            { return softMessages.breakMessages.randomElement()! }
         if (intensity == .normal)
-            { return "" }
+            { return normalMessages.breakMessages.randomElement()! }
         if (intensity == .strong)
-            { return "" }
+            { return strongMessages.breakMessages.randomElement()! }
     }
     else if (kind == .overtime)
     {
         if (intensity == .soft)
-            { return "" }
+            { return softMessages.overtimeMessages.randomElement()! }
         if (intensity == .normal)
-            { return "" }
+            { return normalMessages.overtimeMessages.randomElement()! }
         if (intensity == .strong)
-            { return "" }
+            { return strongMessages.overtimeMessages.randomElement()! }
     }
     else if (kind == .bedtime)
     {
         if (intensity == .soft)
-            { return "" }
+            { return softMessages.bedtimeMessages.randomElement()! }
         if (intensity == .normal)
-            { return "" }
+            { return normalMessages.bedtimeMessages.randomElement()! }
         if (intensity == .strong)
-            { return "" }
+            { return strongMessages.bedtimeMessages.randomElement()! }
     }
     return ""
 }
 
 let BREAK_NOTIFICATION_ACTION_CALLBACK: [(title: String, options: UNNotificationActionOptions, callback: () -> Void)] = [
-    ("Guide Me", [.foreground], AppNotification.onGuideMeAction),
-    ("I Have Done It", [.destructive], AppNotification.onIHaveDoneItAction),
+    ("Show Me How", [.foreground], AppNotification.onGuideMeAction),
+    ("I've Done It", [.destructive], AppNotification.onIHaveDoneItAction),
 ]
 
 class AppNotification

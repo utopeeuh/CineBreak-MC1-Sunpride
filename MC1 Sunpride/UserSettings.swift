@@ -26,10 +26,10 @@ class UserSettings
         if (value != nil) { return value }
         /// default value for user settings
         if (key == .initial)                        { return true }
-        if (key == .username)                       { return nil }
+        if (key == .username)                       { return "User" }
         if (key == .enableVibrate)                  { return true }
         if (key == .sleepTime)                      { return "22:00" }
-        if (key == .messageIntensity)               { return MessageIntensity.normal }
+        if (key == .messageIntensity)               { return MessageIntensity.strong }
         if (key == .targetWatchDuration)            { return "3 hours" }
         if (key == .enableOvertimeNotification)     { return true }
         if (key == .enableBreaktimeNotification)    { return true }
