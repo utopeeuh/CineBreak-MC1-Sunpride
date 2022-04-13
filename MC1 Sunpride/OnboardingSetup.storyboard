@@ -11,7 +11,6 @@
         <!--Onboarding Setup Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="onboardingSetup" id="Y6W-OH-hqX" customClass="OnboardingSetupController" customModule="MC1_Sunpride" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3hR-YN-AfP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -131,12 +130,13 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="lYa-N6-D8b">
                     <rect key="frame" x="0.0" y="0.0" width="358" height="314"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your sleep time at night?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-0m-E63">
-                            <rect key="frame" x="15" y="30" width="328" height="25"/>
+                            <rect key="frame" x="15" y="30" width="268.66666666666669" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="fVJ-77-UNz"/>
                             </constraints>
@@ -145,7 +145,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0K-3C-CuA">
-                            <rect key="frame" x="15" y="240" width="328" height="44"/>
+                            <rect key="frame" x="15" y="240" width="268.66666666666669" height="44"/>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.78039215689999997" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="U7p-7y-aQz"/>
@@ -283,7 +283,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long do you watch at one time?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfJ-im-Mv6">
-                            <rect key="frame" x="15" y="30" width="328" height="25"/>
+                            <rect key="frame" x="15" y="30" width="291.66666666666669" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="ibn-Kf-NlM"/>
                             </constraints>
@@ -292,7 +292,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58M-Ck-2Ac">
-                            <rect key="frame" x="15" y="240" width="328" height="44"/>
+                            <rect key="frame" x="15" y="240" width="291.66666666666669" height="44"/>
                             <color key="backgroundColor" red="0.98039215690000003" green="0.78039215689999997" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="301" id="fKP-QU-S8n"/>

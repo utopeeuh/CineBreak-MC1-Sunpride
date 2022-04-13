@@ -112,7 +112,7 @@ var sharedStartSessionTime: Date? = nil
             timerPressedTime = Date()
         }
         
-        AppNotification.resetBreakNotification()
+        AppNotification.removeAllNotification()
         
         let startTimerRoutine: () -> Void = { [self] in
             startTimer()
@@ -151,8 +151,8 @@ var sharedStartSessionTime: Date? = nil
                     stopTimer()
                     sharedStartSessionTime = nil
                     
-                    pulse.removeFromSuperlayer()
-                    pulse2.removeFromSuperlayer()
+                    pulse.isHidden = true
+                    pulse2.isHidden = true
                     
                     // Input session data
                     createSession(startTime: timerPressedTime)

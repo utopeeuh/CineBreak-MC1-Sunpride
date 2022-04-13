@@ -20,9 +20,9 @@ enum MessageIntensity
 /** a time in seconds that indicate the interval for push notification */
 enum BreakNotificationStep: TimeInterval, CaseIterable
 {
-    case _1 = 10
-    case _2 = 15
-    case _3 = 20
+    case _1 = 30
+    case _2 = 40
+    case _3 = 50
 }
 
 private struct Messages {
@@ -36,7 +36,7 @@ private let softMessages = Messages(breakMessages: ["Time is up! It's important 
 
 private let normalMessages = Messages(breakMessages: ["Fun fact of the day: Taking a little break won't hurt anyone!"], overtimeMessages: ["\(userName), your time is up! It's time to rest or be more productive!", "Hey \(userName), don't you have anything else to do?"], bedtimeMessages: ["It's sleep time. You can continue later after enough rest :)", "Knock knock. Who's there? Sleepy. Sleepy who? Sleepy you."])
 
-private let strongMessages = Messages(breakMessages: ["Fun fact: People who don't take breaks develop back pains!", "Feel like wearing thicker glasses? Take a break!", "Back pain incoming!!!"], overtimeMessages: ["Forgetting other things? Guess you're just lazy and old"], bedtimeMessages: ["For the love of God, stop and go to sleep! You have enough problems for tomorrow!", "I see a person who doesn't care enough about their sleep", "I guess sleep deprivation is a trend now!"])
+private let strongMessages = Messages(breakMessages: ["Fun fact: People who don't take breaks develop back pains!", "Feel like wearing thicker glasses? Take a break!", "Back pain incoming!!!"], overtimeMessages: ["Forgetting other things \(userName)? Guess you're just lazy and old"], bedtimeMessages: ["For the love of God, stop and go to sleep! You have enough problems for tomorrow!", "I see a person who doesn't care enough about their sleep", "I guess sleep deprivation is a trend now \(userName)"])
 
 func getNotificationMessage(_ kind: NotificationKind, _ intensity: MessageIntensity, _ name: String?) -> String
 {
@@ -139,9 +139,55 @@ class AppNotification
             let request = UNNotificationRequest(identifier: "\(step)", content: notifcontent, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
         }
+        
+        // bedtime notification
+        if (true)
+        {
+            notifcontent.body = getNotificationMessage(
+                .bedtime,
+                UserSettings.get(.messageIntensity) as! MessageIntensity,
+                UserSettings.get(.username) as! String?
+            )
+            let sleepTimeIntervalDay0 = UserSettings.getSleepTimeInterval()
+            let date     = Date()
+            let calendar = Calendar.current
+            let hour     = calendar.component(.hour, from: date)
+            let minutes  = calendar.component(.minute, from: date)
+            let currTimeIntervalDay0 = Double(hour * 3600 + minutes * 60)
+            let bedtimeInterval = currTimeIntervalDay0 > sleepTimeIntervalDay0 ?
+                24 * 60 * 60 - currTimeIntervalDay0 + sleepTimeIntervalDay0 : sleepTimeIntervalDay0 - currTimeIntervalDay0
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: bedtimeInterval, repeats: false)
+            let request = UNNotificationRequest(identifier: NotificationKind.overtime.rawValue, content: notifcontent, trigger: trigger)
+            UNUserNotificationCenter.current().add(request)
+        }
+        
+        // overtime notification
+        if (true)
+        {
+            notifcontent.body = getNotificationMessage(
+                .overtime,
+                UserSettings.get(.messageIntensity) as! MessageIntensity,
+                UserSettings.get(.username) as! String?
+            )
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: UserSettings.getOvertimeInterval(), repeats: false)
+            let request = UNNotificationRequest(identifier: NotificationKind.overtime.rawValue, content: notifcontent, trigger: trigger)
+            UNUserNotificationCenter.current().add(request)
+        }
+        
     }
     
-    static func resetBreakNotification() -> Void
+    static func removeAllNotification() -> Void
+    {
+        removeBreakNotification()
+        for kind in [NotificationKind.overtime, NotificationKind.bedtime]
+        {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [kind.rawValue])
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [kind.rawValue])
+        }
+    }
+    
+    static func removeBreakNotification() -> Void
     {
         for step in BreakNotificationStep.allCases
         {
@@ -181,7 +227,7 @@ class AppNotification
     static func onBreakTaken() -> Void
     {
         addBreakCounter()
-        resetBreakNotification()
+        removeBreakNotification()
         registerBreakNotification()
         onBreakTakenHandler?()
     }
