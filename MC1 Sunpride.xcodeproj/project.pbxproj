@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0E0B832805DC7000AC876A /* OnboardingSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E0B822805DC7000AC876A /* OnboardingSetup.storyboard */; };
+		3F0E0B89280632E200AC876A /* PulsingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E0B88280632E200AC876A /* PulsingAnimation.swift */; };
 		3F0FD5FE2803CA0D00D03527 /* Coloring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD5FD2803CA0D00D03527 /* Coloring.swift */; };
 		3F0FD6002803CDBA00D03527 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD5FF2803CDBA00D03527 /* SettingsViewController.swift */; };
 		3F0FD6022803CE9900D03527 /* TableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD6012803CE9900D03527 /* TableOptions.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		3F0E0B822805DC7000AC876A /* OnboardingSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingSetup.storyboard; sourceTree = "<group>"; };
+		3F0E0B88280632E200AC876A /* PulsingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsingAnimation.swift; sourceTree = "<group>"; };
 		3F0FD5FD2803CA0D00D03527 /* Coloring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coloring.swift; sourceTree = "<group>"; };
 		3F0FD5FF2803CDBA00D03527 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3F0FD6012803CE9900D03527 /* TableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOptions.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				3F3BBD6828030F0100DC4484 /* TimerView.swift */,
 				3F3BBD6928030F0100DC4484 /* TimerView.xib */,
+				3F0E0B88280632E200AC876A /* PulsingAnimation.swift */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
 				3F35A0D52802D66100EB347F /* HomeViewController.swift in Sources */,
 				9501E1E428030D9900FBDA5E /* OnboardingCollectionViewCell.swift in Sources */,
+				3F0E0B89280632E200AC876A /* PulsingAnimation.swift in Sources */,
 				9501E20428030DF400FBDA5E /* Utility.swift in Sources */,
 				3FB9E86D2803205100F5D7C4 /* UserSettings.swift in Sources */,
 				3F0FD6002803CDBA00D03527 /* SettingsViewController.swift in Sources */,

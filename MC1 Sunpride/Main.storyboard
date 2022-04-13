@@ -218,16 +218,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHA-QX-PUJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHA-QX-PUJ">
                                 <rect key="frame" x="29.999999999999993" y="74" width="69.333333333333314" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" name="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-Zt-mZv" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-Zt-mZv" customClass="TimerView" customModule="MC1_Sunpride" customModuleProvider="target">
                                 <rect key="frame" x="95" y="194" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4H2-NR-rCT"/>
+                                    <constraint firstAttribute="width" constant="200" id="jIV-w4-Mmm"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
                                         <integer key="value" value="30"/>
@@ -235,9 +237,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-E3-OvS">
-                                <rect key="frame" x="29" y="474" width="332" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-E3-OvS">
+                                <rect key="frame" x="32" y="494" width="326" height="34.333333333333371"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system" title="Preperation">
@@ -248,9 +249,8 @@
                                     <action selector="openSetupModal:" destination="dsH-VR-o1n" eventType="touchUpInside" id="4Tg-cM-aec"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gea-Fk-KuQ">
-                                <rect key="frame" x="29" y="534" width="332" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gea-Fk-KuQ">
+                                <rect key="frame" x="32" y="544.33333333333337" width="326" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system" title="Stretching">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
@@ -263,6 +263,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQf-3B-uFS"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="leading" secondItem="OQf-3B-uFS" secondAttribute="leading" constant="30" id="6H1-ng-eul"/>
+                            <constraint firstItem="gea-Fk-KuQ" firstAttribute="top" secondItem="8wP-E3-OvS" secondAttribute="bottom" constant="16" id="FiI-Kl-77b"/>
+                            <constraint firstItem="QHA-QX-PUJ" firstAttribute="top" secondItem="OQf-3B-uFS" secondAttribute="top" constant="30" id="Jfz-by-ggZ"/>
+                            <constraint firstItem="Lpf-Zt-mZv" firstAttribute="centerX" secondItem="aiy-QU-a9G" secondAttribute="centerX" id="MmR-AZ-5qP"/>
+                            <constraint firstItem="OQf-3B-uFS" firstAttribute="trailing" secondItem="8wP-E3-OvS" secondAttribute="trailing" constant="32" id="SYf-3d-dqm"/>
+                            <constraint firstItem="8wP-E3-OvS" firstAttribute="leading" secondItem="OQf-3B-uFS" secondAttribute="leading" constant="32" id="Xsw-xY-Ggo"/>
+                            <constraint firstItem="8wP-E3-OvS" firstAttribute="top" secondItem="Lpf-Zt-mZv" secondAttribute="bottom" constant="100" id="d9a-C2-4Tl"/>
+                            <constraint firstItem="OQf-3B-uFS" firstAttribute="trailing" secondItem="gea-Fk-KuQ" secondAttribute="trailing" constant="32" id="pDv-vm-iQ2"/>
+                            <constraint firstItem="Lpf-Zt-mZv" firstAttribute="top" secondItem="QHA-QX-PUJ" secondAttribute="bottom" constant="90" id="tlp-8H-dxk"/>
+                            <constraint firstItem="gea-Fk-KuQ" firstAttribute="leading" secondItem="OQf-3B-uFS" secondAttribute="leading" constant="32" id="wmq-Ju-k8c"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" selectedImage="house.fill" id="bam-LK-BGs"/>
                     <connections>
