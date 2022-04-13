@@ -10,15 +10,14 @@ class OnboardingViewController: UIViewController
     
     var arrOfOnboardingImage: [UIImage] = [UIImage(named: "logologo.svg")!]
     var slides: [OnboardingSlide] = []
-    //var slides3: [OnboardingSlide3] = []
     
     var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                nextBtn.setTitle("START", for: .normal)
+                nextBtn.setTitle("Start", for: .normal)
             } else {
-                nextBtn.setTitle("NEXT", for: .normal)
+                nextBtn.setTitle("Next", for: .normal)
             }
         }
     }
@@ -26,11 +25,11 @@ class OnboardingViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                slides = [OnboardingSlide(title: "Personalize Reminder, Track Performance, and Reduce Movie Time", description: "", image: UIImage(named: "logologo.svg")),
-                          OnboardingSlide(title: "Before you start...", description: "We'd recommend you to do these things", image: UIImage(named: "logologo.svg")),
-                          OnboardingSlide(title: "Tell us a little bit about yourself", description: "", image: UIImage(named: "logologo.svg"))
+                slides = [OnboardingSlide(title: "", description: "", image: UIImage(named: "onboardingPage1.png")),
+                          OnboardingSlide(title: "Before you start...", description: "We'd recommend you to do these things", image: UIImage(named: "onboardingPage2.png")),
+                          OnboardingSlide(title: "And after you do the previous steps...", description: "", image: UIImage(named: "onboardingPage3.png"))
                 ]
-              //  slides3 = [OnboardingSlide3(title: "Tell us a little bit about yourself",
+            
     }
   
     
