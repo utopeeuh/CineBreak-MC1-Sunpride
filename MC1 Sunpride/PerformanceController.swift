@@ -40,7 +40,7 @@ class PerformanceController: UIViewController
         avgWatchText.text = "\(avgWatchTime) mins"
         
         let lastWeekTime = UserPerformance.shared.getLastWeekStat()
-        lastWeekLabel.text = "\(roundDouble(x: lastWeekTime)) minutes"
+        lastWeekLabel.text = "\(roundDouble(x: lastWeekTime)) mins"
     }
     
     private func calculateStats(){
