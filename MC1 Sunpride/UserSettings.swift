@@ -28,13 +28,27 @@ class UserSettings
         if (key == .initial)                        { return true }
         if (key == .username)                       { return nil }
         if (key == .enableVibrate)                  { return true }
-        if (key == .sleepTime)                      { return "22:00" }
+        if (key == .sleepTime)                      { return "09:00" }
         if (key == .messageIntensity)               { return MessageIntensity.normal }
         if (key == .targetWatchDuration)            { return "3 hours" }
         if (key == .enableOvertimeNotification)     { return true }
         if (key == .enableBreaktimeNotification)    { return true }
         if (key == .enablePassBedtimeNotification)  { return true }
         return nil
+    }
+    
+    public static func getSleepTimeInterval() -> TimeInterval
+    {
+        let time = get(.sleepTime) as! String
+        let times = time.split(separator: ":")
+        return 3600 * Double(times[0])! + 60 * Double(times[1])!
+    }
+    
+    public static func getOvertimeInterval() -> TimeInterval
+    {
+        let time = get(.targetWatchDuration) as! String
+        let times = time.split(separator: " ")
+        return 3600 * Double(times[0])!
     }
     
     public static func getSleepTimeHour() -> Int{
