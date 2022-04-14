@@ -120,9 +120,12 @@ class AppNotification
     
     private static func registerBreakNotification() -> Void
     {
+        let intensityIdx = UserSettings.get(.messageIntensity) as! Int
+        let msgIntensity = MessageIntensity.allCases[intensityIdx]
+        
         let message = getNotificationMessage(
             .breaktime,
-            UserSettings.get(.messageIntensity) as! MessageIntensity,
+            msgIntensity,
             UserSettings.get(.username) as! String?
         )
         
@@ -145,7 +148,7 @@ class AppNotification
         {
             notifcontent.body = getNotificationMessage(
                 .bedtime,
-                UserSettings.get(.messageIntensity) as! MessageIntensity,
+                msgIntensity,
                 UserSettings.get(.username) as! String?
             )
             let sleepTimeIntervalDay0 = UserSettings.getSleepTimeInterval()
@@ -167,7 +170,7 @@ class AppNotification
         {
             notifcontent.body = getNotificationMessage(
                 .overtime,
-                UserSettings.get(.messageIntensity) as! MessageIntensity,
+                msgIntensity,
                 UserSettings.get(.username) as! String?
             )
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: UserSettings.getOvertimeInterval(), repeats: false)
