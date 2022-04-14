@@ -87,23 +87,9 @@ var sharedStartSessionTime: Date? = nil
         trackLayer.fillColor   = UIColor.clear.cgColor
         trackLayer.lineWidth   = 25
         trackLayer.lineCap     = .round
-        // pulse animation
-        pulse = PulseAnimation(numberOfPulse: Float.infinity, radius: 180, postion: buttonTimer.center)
-        pulse.animationDuration = 1.2
-        pulse.backgroundColor = UIColor.systemIndigo.cgColor
-        // 2nd pulse animation
-        pulse2 = PulseAnimation(numberOfPulse: Float.infinity, radius: 165, postion: buttonTimer.center)
-        pulse2.animationDuration = 1.2
-        pulse2.backgroundColor = UIColor.highlightColor.cgColor
-        // sublayer order
-        self.layer.insertSublayer(pulse, at: 0)
-        self.layer.insertSublayer(pulse2, at: 1)
         // add track and progression bar as sublayer
         self.layer.addSublayer(trackLayer)
         self.layer.addSublayer(shapeLayer)
-        // set to hidden first, wait for timer button
-        pulse.isHidden = true
-        pulse2.isHidden = true
     }
     
     @IBAction func onTimerButton(_ sender: UIButton)
@@ -118,8 +104,17 @@ var sharedStartSessionTime: Date? = nil
             startTimer()
             sharedStartSessionTime = startTime
             AppNotification.sendNotification()
-            pulse.isHidden = false
-            pulse2.isHidden = false
+            // pulse animation
+            pulse = PulseAnimation(numberOfPulse: Float.infinity, radius: 180, postion: buttonTimer.center)
+            pulse.animationDuration = 1.2
+            pulse.backgroundColor = UIColor.systemIndigo.cgColor
+            // 2nd pulse animation
+            pulse2 = PulseAnimation(numberOfPulse: Float.infinity, radius: 165, postion: buttonTimer.center)
+            pulse2.animationDuration = 1.2
+            pulse2.backgroundColor = UIColor.highlightColor.cgColor
+            // show
+            layer.insertSublayer(pulse, at: 0)
+            layer.insertSublayer(pulse2, at: 1)
         }
         
         Task(priority: .high)
@@ -151,8 +146,8 @@ var sharedStartSessionTime: Date? = nil
                     stopTimer()
                     sharedStartSessionTime = nil
                     
-                    pulse.isHidden = true
-                    pulse2.isHidden = true
+                    pulse.removeFromSuperlayer()
+                    pulse2.removeFromSuperlayer()
                     
                     // Input session data
                     createSession(startTime: timerPressedTime)

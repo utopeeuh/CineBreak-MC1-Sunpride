@@ -55,7 +55,8 @@ import UIKit
                     desc: msgIntensity,
                     iconBackgroundColor: .systemIndigo
                 ) { (sender) in
-                    // on selection handler
+                    let view = MessageIntensitySetView(frame: CGRect(x: 0, y: 0, width: 310, height: 480))
+                    self.animateIn(desiredView: view)
             }),
             .switchCell(model:
                 SettingsSwitchModel(
@@ -77,7 +78,9 @@ import UIKit
                     desc: UserSettings.get(.sleepTime) as? String,
                     iconBackgroundColor: .systemIndigo
                 ) { (sender) in
-                    // on selection handler
+                    let view = SleepTimeSetView(frame: CGRect(x: 0, y: 0, width: 380, height: 350))
+                    self.animateIn(desiredView: view)
+                    view.isHidden = false
             }),
             .staticCell(model:
                 SettingNavigationModel(
@@ -86,7 +89,8 @@ import UIKit
                     desc: UserSettings.get(.targetWatchDuration) as! String + " hours",
                     iconBackgroundColor: .systemIndigo
                 ) { (sender) in
-                    // on selection handler
+                    let view = WatchDurSetView(frame: CGRect(x: 0, y: 0, width: 380, height: 350))
+                    self.animateIn(desiredView: view)
             })
         ]))
         
@@ -94,7 +98,7 @@ import UIKit
             .switchCell(model:
                 SettingsSwitchModel(
                     title: "Breaktime",
-                    icon: UIImage(systemName: "speaker.wave.3"),
+                    icon: UIImage(systemName: "bell.fill"),
                     iconBackgroundColor: . systemIndigo,
                     initialState: UserSettings.get(.enableBreaktimeNotification)! as! Bool
                 ) { (sender) in
@@ -104,7 +108,7 @@ import UIKit
             .switchCell(model:
                 SettingsSwitchModel(
                     title: "Overtime",
-                    icon: UIImage(systemName: "speaker.wave.3"),
+                    icon: UIImage(systemName: "bell.fill"),
                     iconBackgroundColor: . systemIndigo,
                     initialState: UserSettings.get(.enableOvertimeNotification)! as! Bool
                 ) { (sender) in
@@ -114,7 +118,7 @@ import UIKit
             .switchCell(model:
                 SettingsSwitchModel(
                     title: "Pass Bedtime",
-                    icon: UIImage(systemName: "speaker.wave.3"),
+                    icon: UIImage(systemName: "bell.fill"),
                     iconBackgroundColor: . systemIndigo,
                     initialState: UserSettings.get(.enablePassBedtimeNotification)! as! Bool
                 ) { (sender) in
@@ -204,5 +208,29 @@ import UIKit
         case .switchCell(let model):
             break
         }
+    }
+    
+    func animateIn(desiredView: UIView){
+        let backgroundView = UIApplication.shared.topMostViewController()?.view
+        
+        backgroundView?.addSubview(desiredView)
+        
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = backgroundView!.center
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
+    }
+
+    func animateOut(desiredView: UIView){
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            desiredView.alpha = 0
+        }, completion: {_ in
+            desiredView.removeFromSuperview()
+        })
     }
 }

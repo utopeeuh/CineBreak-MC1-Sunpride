@@ -15,6 +15,12 @@
 		3F0FD60628041A1900D03527 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0FD60528041A1900D03527 /* SettingsTableView.swift */; };
 		3F2E52DB2801899F00CC0CE4 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E52DA2801899F00CC0CE4 /* SystemData.swift */; };
 		3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E52DC280193DA00CC0CE4 /* Main.storyboard */; };
+		3F34CCB72807B97B00C73E40 /* SleepTimeSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F34CCB62807B97B00C73E40 /* SleepTimeSetView.xib */; };
+		3F34CCB92807B98E00C73E40 /* WatchDurSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F34CCB82807B98E00C73E40 /* WatchDurSetView.xib */; };
+		3F34CCBB2807B9A600C73E40 /* MessageIntensitySetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F34CCBA2807B9A600C73E40 /* MessageIntensitySetView.xib */; };
+		3F34CCBD2807BAD500C73E40 /* SleepTimeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34CCBC2807BAD500C73E40 /* SleepTimeSetView.swift */; };
+		3F34CCBF2807BADF00C73E40 /* WatchDurSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34CCBE2807BADF00C73E40 /* WatchDurSetView.swift */; };
+		3F34CCC12807BAEB00C73E40 /* MessageIntensitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34CCC02807BAEB00C73E40 /* MessageIntensitySetView.swift */; };
 		3F35A0D52802D66100EB347F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35A0D42802D66100EB347F /* HomeViewController.swift */; };
 		3F3BBD6B28030F0100DC4484 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BBD6828030F0100DC4484 /* TimerView.swift */; };
 		3F3BBD6C28030F0100DC4484 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BBD6928030F0100DC4484 /* TimerView.xib */; };
@@ -51,6 +57,12 @@
 		3F0FD60528041A1900D03527 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		3F2E52DA2801899F00CC0CE4 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
 		3F2E52DC280193DA00CC0CE4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3F34CCB62807B97B00C73E40 /* SleepTimeSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepTimeSetView.xib; sourceTree = "<group>"; };
+		3F34CCB82807B98E00C73E40 /* WatchDurSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchDurSetView.xib; sourceTree = "<group>"; };
+		3F34CCBA2807B9A600C73E40 /* MessageIntensitySetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageIntensitySetView.xib; sourceTree = "<group>"; };
+		3F34CCBC2807BAD500C73E40 /* SleepTimeSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimeSetView.swift; sourceTree = "<group>"; };
+		3F34CCBE2807BADF00C73E40 /* WatchDurSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDurSetView.swift; sourceTree = "<group>"; };
+		3F34CCC02807BAEB00C73E40 /* MessageIntensitySetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageIntensitySetView.swift; sourceTree = "<group>"; };
 		3F35A0D42802D66100EB347F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F3BBD6828030F0100DC4484 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		3F3BBD6928030F0100DC4484 /* TimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
@@ -157,6 +169,12 @@
 			children = (
 				956B82B82805D9BD00620383 /* OnboardingSetupController.swift */,
 				3F0E0B822805DC7000AC876A /* OnboardingSetup.storyboard */,
+				3F34CCB62807B97B00C73E40 /* SleepTimeSetView.xib */,
+				3F34CCB82807B98E00C73E40 /* WatchDurSetView.xib */,
+				3F34CCBA2807B9A600C73E40 /* MessageIntensitySetView.xib */,
+				3F34CCBC2807BAD500C73E40 /* SleepTimeSetView.swift */,
+				3F34CCBE2807BADF00C73E40 /* WatchDurSetView.swift */,
+				3F34CCC02807BAEB00C73E40 /* MessageIntensitySetView.swift */,
 			);
 			name = "Onboarding Setup";
 			sourceTree = "<group>";
@@ -261,9 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				952A6D3628051D6500F39E6D /* SetupModal.storyboard in Resources */,
+				3F34CCB92807B98E00C73E40 /* WatchDurSetView.xib in Resources */,
 				952A6D3828051D6500F39E6D /* StretchingModal.storyboard in Resources */,
 				3F3BBD6C28030F0100DC4484 /* TimerView.xib in Resources */,
 				3F0E0B832805DC7000AC876A /* OnboardingSetup.storyboard in Resources */,
+				3F34CCBB2807B9A600C73E40 /* MessageIntensitySetView.xib in Resources */,
+				3F34CCB72807B97B00C73E40 /* SleepTimeSetView.xib in Resources */,
 				3F3BBD6E2803110C00DC4484 /* LaunchScreen.storyboard in Resources */,
 				3F2E52DD280193DA00CC0CE4 /* Main.storyboard in Resources */,
 				95E48AB827FAA8F9000B4A4C /* Assets.xcassets in Resources */,
@@ -295,12 +316,15 @@
 				3F4987332804EC58004FF771 /* GeneralTableCell.swift in Sources */,
 				9501E1F528030DB400FBDA5E /* TableSwitchCell.swift in Sources */,
 				9501E1EB28030DA800FBDA5E /* Session.swift in Sources */,
+				3F34CCBD2807BAD500C73E40 /* SleepTimeSetView.swift in Sources */,
 				95E48AB127FAA8F9000B4A4C /* SceneDelegate.swift in Sources */,
 				3F35A0D52802D66100EB347F /* HomeViewController.swift in Sources */,
+				3F34CCBF2807BADF00C73E40 /* WatchDurSetView.swift in Sources */,
 				9501E1E428030D9900FBDA5E /* OnboardingCollectionViewCell.swift in Sources */,
 				3F0E0B89280632E200AC876A /* PulsingAnimation.swift in Sources */,
 				9501E20428030DF400FBDA5E /* Utility.swift in Sources */,
 				3FB9E86D2803205100F5D7C4 /* UserSettings.swift in Sources */,
+				3F34CCC12807BAEB00C73E40 /* MessageIntensitySetView.swift in Sources */,
 				3F0FD6002803CDBA00D03527 /* SettingsViewController.swift in Sources */,
 				3F0FD60628041A1900D03527 /* SettingsTableView.swift in Sources */,
 			);

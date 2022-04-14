@@ -170,7 +170,7 @@ class OnboardingSetupController: UIViewController
         if (idx == MessageIntensity.strong.rawValue)
             { changeSelected(sender: hardButton, isSelected: true) }
         if (idx == MessageIntensity.normal.rawValue)
-            { changeSelected(sender: neutralButton, isSelected: true) }
+            { changeSelected(sender: neutralButton, isSelected:     true) }
     }
     
     @IBAction func onStartButton(_ sender: Any) {
