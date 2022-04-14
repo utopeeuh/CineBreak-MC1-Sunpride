@@ -20,7 +20,7 @@ enum MessageIntensity
 /** a time in seconds that indicate the interval for push notification */
 enum BreakNotificationStep: TimeInterval, CaseIterable
 {
-    case _1 = 30
+    case _1 = 10
     case _2 = 40
     case _3 = 50
 }

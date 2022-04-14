@@ -260,7 +260,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="initialTime">
-                                        <integer key="value" value="30"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fillProgress" value="NO"/>
                                 </userDefinedRuntimeAttributes>
