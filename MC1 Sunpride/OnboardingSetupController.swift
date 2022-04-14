@@ -158,9 +158,11 @@ class OnboardingSetupController: UIViewController
         button3.semanticContentAttribute = .forceRightToLeft
         button3aa.layer.cornerRadius = 15
         
+        let nameFromDevice = SystemData.pickNameFromDevice()
+        
         durationField.text = UserSettings.get(.targetWatchDuration) as! String?
         sleepField.text = UserSettings.get(.sleepTime) as! String?
-        nameTextField.text = SystemData.pickNameFromDevice()
+        nameTextField.text = nameFromDevice == nil ? UserSettings.get(.username) as! String : nameFromDevice
         
         let idx = UserSettings.get(.messageIntensity) as! Int
         if (idx == MessageIntensity.soft.rawValue)
@@ -172,8 +174,9 @@ class OnboardingSetupController: UIViewController
     }
     
     @IBAction func onStartButton(_ sender: Any) {
-        self.dismiss(animated: true)
+        UserSettings.set(.username, nameTextField.text)
         UserSettings.set(.initial, false)
+        self.dismiss(animated: true)
     }
     
     func animateIn(desiredView: UIView){
@@ -198,10 +201,6 @@ class OnboardingSetupController: UIViewController
         }, completion: {_ in
             desiredView.removeFromSuperview()
         })
-    }
-    
-    @IBAction func onNameChanged(_ sender: UITextField) {
-        UserSettings.set(.username, sender.text)
     }
     
     @objc func dateChange(datePicker: UIDatePicker)

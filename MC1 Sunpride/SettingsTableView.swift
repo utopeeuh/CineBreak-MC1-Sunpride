@@ -41,6 +41,15 @@ import UIKit
         models.append(Section(title: "General1", options: [
             .staticCell(model:
                 SettingNavigationModel(
+                    title: "Nickname",
+                    icon: UIImage(systemName: "person.circle.fill"),
+                    desc: UserSettings.get(.username) as? String,
+                    iconBackgroundColor: .systemIndigo
+                ) { (sender) in
+                    // on selection handler
+            }),
+            .staticCell(model:
+                SettingNavigationModel(
                     title: "Message Intensity",
                     icon: UIImage(systemName: "message"),
                     desc: msgIntensity,
