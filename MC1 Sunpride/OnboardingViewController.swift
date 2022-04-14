@@ -3,6 +3,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController
 {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextBtn: UIButton!
