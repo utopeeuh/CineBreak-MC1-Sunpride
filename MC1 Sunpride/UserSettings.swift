@@ -6,7 +6,7 @@ enum SettingsKey
     case username                      /// String
     case enableVibrate                 /// Bool
     case sleepTime                     /// String
-    case messageIntensity              /// MessageIntensity
+    case messageIntensity              /// Int as CaseIterable Index
     case targetWatchDuration           /// String
     case enableBreaktimeNotification   /// Bool
     case enableOvertimeNotification    /// Bool
@@ -28,9 +28,9 @@ class UserSettings
         if (key == .initial)                        { return true }
         if (key == .username)                       { return "User" }
         if (key == .enableVibrate)                  { return true }
-        if (key == .sleepTime)                      { return "09:00" }
-        if (key == .messageIntensity)               { return MessageIntensity.normal }
-        if (key == .targetWatchDuration)            { return "3 hours" }
+        if (key == .sleepTime)                      { return "22:00" }
+        if (key == .messageIntensity)               { return MessageIntensity.normal.rawValue }
+        if (key == .targetWatchDuration)            { return "3" }
         if (key == .enableOvertimeNotification)     { return true }
         if (key == .enableBreaktimeNotification)    { return true }
         if (key == .enablePassBedtimeNotification)  { return true }
@@ -47,8 +47,7 @@ class UserSettings
     public static func getOvertimeInterval() -> TimeInterval
     {
         let time = get(.targetWatchDuration) as! String
-        let times = time.split(separator: " ")
-        return 3600 * Double(times[0])!
+        return 3600 * Double(time)!
     }
     
     public static func getSleepTimeHour() -> Int{

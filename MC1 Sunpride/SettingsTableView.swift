@@ -35,7 +35,8 @@ import UIKit
     
     func configure()
     {
-        let msgIntensity = "\(UserSettings.get(.messageIntensity) as! MessageIntensity)".capitalized
+        let idx = UserSettings.get(.messageIntensity) as! Int
+        let msgIntensity = "\(MessageIntensity.allCases[idx])".capitalized
         
         models.append(Section(title: "General1", options: [
             .staticCell(model:
@@ -73,7 +74,7 @@ import UIKit
                 SettingNavigationModel(
                     title: "Watch Duration",
                     icon: UIImage(systemName: "bed.double.fill"),
-                    desc: UserSettings.get(.targetWatchDuration) as? String,
+                    desc: UserSettings.get(.targetWatchDuration) as! String + " hours",
                     iconBackgroundColor: .systemIndigo
                 ) { (sender) in
                     // on selection handler

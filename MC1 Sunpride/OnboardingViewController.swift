@@ -3,6 +3,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController
 {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextBtn: UIButton!
@@ -37,14 +38,20 @@ class OnboardingViewController: UIViewController
     {
         if (currentPage == slides.count - 1)
         {
-            UserSettings.set(.initial, false)
-            
             let vc = storyboard!.instantiateViewController(identifier: "dashboard")
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: false)
             
             notificationRequestVC.modalPresentationStyle = .fullScreen
-            vc.present(notificationRequestVC, animated: true)
+            // vc.present(notificationRequestVC, animated: true)
+            
+            let vcSetup = UIStoryboard(name: "OnboardingSetup", bundle: nil).instantiateViewController(withIdentifier: "onboardingSetup")
+            vcSetup.modalPresentationStyle = .fullScreen
+            vc.present(notificationRequestVC, animated: true) {
+                notificationRequestVC.present(vcSetup, animated: true)
+            }
+            
+            
         }
         else
         {
