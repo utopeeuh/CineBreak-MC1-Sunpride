@@ -52,14 +52,14 @@ class UserSettings
     
     public static func getSleepTimeHour() -> Int{
         let sleepTime = String(describing: UserSettings.get(.sleepTime))
-        let hour = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 10)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 11)])
+        let hour = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 9)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 10)])
         print(hour)
         return Int(hour)!
     }
 
     public static func getSleepTimeMinute() -> Int{
         let sleepTime = String(describing: UserSettings.get(.sleepTime))
-        let minute = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 13)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 14)])
+        let minute = String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 12)]) + String(sleepTime[sleepTime.index(sleepTime.startIndex, offsetBy: 13)])
         return Int(minute)!
     }
 }
