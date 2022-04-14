@@ -163,7 +163,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" toolTip="Your Name" text="Default" borderStyle="roundedRect" placeholder="Your Nickname" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JV1-7t-c1R">
+                            <textField toolTip="Your Name" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" borderStyle="roundedRect" placeholder="Your Nickname" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JV1-7t-c1R">
                                 <rect key="frame" x="24" y="213" width="344" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" red="0.2376124859" green="0.2475163937" blue="0.33124637600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,9 +171,6 @@
                                 <color key="textColor" name="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="done" textContentType="nickname"/>
-                                <connections>
-                                    <action selector="onNameChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="bNn-k6-yDq"/>
-                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xXG-am-xoU">
                                 <rect key="frame" x="24" y="184" width="21" height="24"/>
